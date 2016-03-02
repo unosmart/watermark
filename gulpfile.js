@@ -1,5 +1,4 @@
 'use strict';
-
 var $ = {
   package: require('./package.json'),
   config: require('./gulp/config'),
@@ -12,6 +11,7 @@ var $ = {
   gulp: require('gulp'),
   rimraf: require('rimraf'),
   browserSync: require('browser-sync').create(),
+  sprite: require('gulp.spritesmith'),
   gp: require('gulp-load-plugins')({
     rename: {
       'gulp-replace-task': 'replace'
@@ -31,8 +31,10 @@ $.gulp.task('default', $.gulp.series(
     'sass',
     'jade',
     'js.foundation',
+    'copy:resource',
     'js.process'
   ),
+  $.gulp.parallel('sprite'),
   $.gulp.parallel(
     'watch',
     'serve'
