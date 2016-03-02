@@ -1,0 +1,46 @@
+/* font-family: "RobotoLight"; */
+@font-face {
+    font-family: "RobotoLight";
+    src: url("../fonts/RobotoLight.eot");
+    src: url("../fonts/RobotoLight.eot?#iefix")format("embedded-opentype"),
+    url('../fonts/RobotoLight.woff2') format('woff2'),
+    url("../fonts/RobotoLight.woff") format("woff"),
+    url("../fonts/RobotoLight.ttf") format("truetype");
+    font-style: normal;
+    font-weight: normal;
+}
+/* font-family: "RobotoMedium"; */
+@font-face {
+    font-family: "RobotoMedium";
+    src: url("../fonts/RobotoMedium.eot");
+    src: url("../fonts/RobotoMedium.eot?#iefix")format("embedded-opentype"),
+    url('../fonts/RobotoMedium.woff2') format('woff2'),
+    url("../fonts/RobotoMedium.woff") format("woff"),
+    url("../fonts/RobotoMedium.ttf") format("truetype");
+    font-style: normal;
+    font-weight: normal;
+}
+
+/* font-family: "fira-sanslight"; */
+@font-face {
+    font-family: 'fira-sanslight';
+    src: url('../fonts/firasans-light-webfont.eot');
+    src: url('../fonts/firasans-light-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/firasans-light-webfont.woff2') format('woff2'),
+         url('../fonts/firasans-light-webfont.woff') format('woff'),
+         url('../fonts/firasans-light-webfont.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+/* font-family: "SegoeUILight"; */
+@font-face {
+    font-family: "SegoeUILight";
+    src: url("../fonts/SegoeUILight.eot");
+    src: url("../fonts/SegoeUILight.eot?#iefix")format("embedded-opentype"),
+    url("../fonts/SegoeUILight.woff") format("woff"),
+    url("../fonts/SegoeUILight.ttf") format("truetype");
+    font-style: normal;
+    font-weight: normal;
+}

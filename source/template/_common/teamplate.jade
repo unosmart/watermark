@@ -1,0 +1,11 @@
+doctype html
+html(lang='ru-RU')
+    include ../_modules/_head
+    body
+        <!--[if lt IE 7]>
+        <p class="browsehappy">Вы используете <strong>устаревший</strong> браузер. Пожалуйста <a href="http://browsehappy.com/">обновите его</a></p>
+        <![endif]-->
+        .wrapper
+            block content
+        include _footer
+        include ../_modules/_scripts
