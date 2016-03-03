@@ -1,0 +1,30 @@
+ .settings-btn{
+  @extend %clearfix;
+}
+.settings-btn_mod {
+  width: 100px;
+  height: 40px;
+  border: none;
+  border-radius: 3px;
+  color: #fff;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.settings-btn__left {
+  float: left;
+  background-color: #c1cfd9;
+
+  &:hover {
+    background-color: darken(#c1cfd9, 20%);
+  }
+}
+
+.settings-btn__right {
+  float: right;
+  background-color: #f97e76;
+
+  &:hover {
+    background-color: darken(#f97e76, 20%);
+  }
+}
