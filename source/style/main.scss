@@ -5,12 +5,13 @@
   "_mixin/variables",
   "_mixin/placeholders",
   "font",
-  "_sprite";
+  "_sprite",
+  "_vendor/normalize";
 // ------------------------------------------
 // Base
 //-------------------------------------------
 @import
-  "_blocks/_container",
+  "_blocks/_base",
   "_blocks/_content",
   "_blocks/_settings",
   "_blocks/footer";

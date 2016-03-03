@@ -4,8 +4,24 @@ block title
  | Генерация водяных знаков
 
 block content
-  main.maincontent
-    .main-content
+  .links
+    .links__languages
+      ul.language
+        li(class="languages__item")
+          a(href="#").languages__link
+            | РУС
+        li(class="languages__item")
+          a(href="#").languages__link
+            | ENG
+    .links__socials
+      - var icons = ['fb', 'tw', 'vk']
+      ul.socials
+        each icon in icons
+          li(class="socials__item")
+            a(href="#" class="socials__link_" + icon)
+      a(href="#" class="socials_link-like")
+  main.main_wrap
+    .main_content
       include ./_common/_content
     aside.settings
-      include ./_common/_settings
+      include  ./_common/_settings
