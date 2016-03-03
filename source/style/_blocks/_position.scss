@@ -1,0 +1,23 @@
+.hr-down{
+    @include sprite($hr);
+    background-repeat: no-repeat; 
+    position: absolute;
+    right: 0;
+}
+
+.settings {
+  background-color: #f1f1f5;
+  width: 258px;
+  position: relative;
+  float: right;
+  height: 100%;
+  &__title{
+    text-align: center;
+    margin: 0;
+    padding-top: 23px;
+    margin-bottom: 20px;
+    color: #2e3641;
+    font-family:'RobotoLight';
+    font-size: 26px;
+  }
+}

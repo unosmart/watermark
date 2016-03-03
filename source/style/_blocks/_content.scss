@@ -1,36 +1,39 @@
 /*==============================================
 =====================CONTENT====================
 ================================================*/
-
+.main_content{
+  float: left;
+}
 .content{
-	width: 702px;
-	height: 670px;
-	opacity: 0.64;
-	background-color: #2e3641;
+  width: 702px;
+  height: 670px;
+  opacity: 0.64;
+  background-color: #2e3641;
 }
 .content__title{
-	margin: 0 0 55px 25px;
+  margin: 0 0 35px 25px;
+  padding-top: 15px;
 }
 .content__title-text{
-	color: #fff;
-	font-family: "Segoe UI";
-	font-size: 36px;
-	font-weight: 300;
-	margin: 0;
-	padding: 0;
+  color: #fff;
+  font-family: "Segoe UI";
+  font-size: 36px;
+  font-weight: 300;
+  margin: 0;
+  padding: 0;
 }
 .content__main-window{
-	background: #fff;
-	width: 651px;
-	height: 535px;
-	position: relative;
-	margin-left: 24px;
+  background: #fff;
+  width: 651px;
+  height: 535px;
+  position: relative;
+  margin-left: 24px;
 }
 .content__img-block,
 .content__watermark{
-	position: absolute;
+  position: absolute;
 }
 .content__img{
-	max-width: 651px;
-	max-height: 535px;
+  max-width: 651px;
+  max-height: 535px;
 }

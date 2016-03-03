@@ -1,0 +1,76 @@
+.form{
+  &__title{
+    font-size: 14px;
+    font-family:'RobotoMedium';
+    color: #2e3641;
+    margin-bottom: 8px;
+    display: inline-block;
+  }
+  &__section{
+  width: 220px;
+  margin: 0 auto;
+  @extend %clearfix;
+      &__title{
+      font-size: 14px;
+      font-family: 'RobotoLight';
+      font-weight: normal;
+      color: #2e3641;
+      margin-bottom: 30px;
+      }
+  }
+  &__file{
+    width: 220px;
+    position: relative;
+    margin-bottom: 20px;
+    margin-top: 5px;
+    display: flex;
+    flex-flow: row nowrap;
+  }
+  
+  &__input-img{
+    height: 27px;
+    width: 180px;
+    padding: 0;
+    box-sizing: border-box;
+    border-radius: 3px;
+    outline: none;
+    border: 1px solid #9eb2c0;
+    color:#a4b7c4;
+    font-size: 12px;
+    font-family: 'RobotoLight';
+    padding-left: 10px;
+    cursor:pointer;
+  }
+  &__btn{
+    padding: 0;
+    margin: 0;
+    position: absolute;
+    top: -1px;
+    right: 4px;
+    display: block;
+    height: 29px;
+    width: 39px;
+    box-sizing: border-box;
+    border-radius: 0px 5px 5px 0;
+    cursor: pointer; 
+    background:#f97e76;
+      &:before{
+        position: absolute;
+     content: " ";
+     @include sprite($download);
+     background-repeat: no-repeat;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+      }
+  }
+}
+.fileupload {
+    position: absolute;
+    border: none;
+    clip: rect(0 0 0 0);
+    width: 0px;
+    height: 0px;
+    overflow: hidden;
+    padding: 0;
+  }

@@ -8,6 +8,7 @@ module.exports = [
   './gulp/task/clean.js',
   './gulp/task/js.foundation.js',
   './gulp/task/copy.resource.js',
+  './gulp/task/copy.font.js',
   './gulp/task/sprite.js', 
   './gulp/task/js.process.js',
   './gulp/task/js.lint.js'

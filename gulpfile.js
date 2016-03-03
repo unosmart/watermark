@@ -26,11 +26,11 @@ $.path.task.forEach(function(taskPath) {
 $.dev = true;
 
 $.gulp.task('default', $.gulp.series(
-  'clean',
   $.gulp.parallel(
     'sass',
     'jade',
     'js.foundation',
+    'copy:font',
     'copy:resource',
     'js.process'
   ),

@@ -1,18 +1,13 @@
-// ------------------------------------------
-  // Utils
-//-------------------------------------------
-@import
-  "_mixin/variables",
-  "_mixin/placeholders",
-  "font",
-  "_sprite",
-  "_vendor/normalize";
-// ------------------------------------------
-// Base
-//-------------------------------------------
-@import
-  "_blocks/_base",
-  "_blocks/_content",
-  "_blocks/_settings",
-  "_blocks/footer";
+/*==================== Vendor внешние стили ==========================*/
+@import "_vendor/normalize";
+@import "_vendor/jquery-ui";
+/*========================== Свое, родное ==========================*/
+@import "_mixin/variables";
+@import "_mixin/placeholders";
+@import "font";
+@import "_sprite";
+@import "_blocks/_base";
+@import "_blocks/_content";
+@import "_blocks/_settings";
+@import "_blocks/footer";
 
