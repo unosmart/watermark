@@ -1,11 +1,10 @@
-html, body{
+body{
   height: 100%;
   background: url('/assets/images/bg.jpg');
-  background-size: cover;
-}
-body{
   display: flex;
-  flex-direction: column;
+  background-size: cover;
+  flex-flow: column nowrap;
+  justify-content: center;
   margin: 0;
 }
 .wrapper{
@@ -16,7 +15,6 @@ body{
   width:960px;
   min-height: 670px;
   margin: 0 auto;
-  background: #c0c0c0;
 }
 .links{
   position: absolute;
