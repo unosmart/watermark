@@ -2,17 +2,17 @@
 =====================CONTENT====================
 ================================================*/
 .main_content{
-  float: left;
+  @extend %clearfix;
 }
 .content{
   width: 702px;
   height: 670px;
   opacity: 0.64;
   background-color: #2e3641;
+  float: left;
 }
 .content__title{
-  margin: 0 0 35px 25px;
-  padding-top: 15px;
+  margin: 0 0 55px 25px;
 }
 .content__title-text{
   color: #fff;
@@ -26,14 +26,25 @@
   background: #fff;
   width: 651px;
   height: 535px;
-  position: relative;
   margin-left: 24px;
+  display: flex;
+  overflow: hidden;
 }
-.content__img-block,
-.content__watermark{
+.content__img-block{
+  margin: auto;
+  position: relative;
+  overflow: hidden;
+}
+.content__watermark-block{
   position: absolute;
+  left: 0;
+  top: 0;
 }
 .content__img{
   max-width: 651px;
   max-height: 535px;
+}
+.content__watermark{
+  max-width: 216px;
+  max-height: 223px;
 }
