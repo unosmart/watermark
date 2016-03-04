@@ -35,7 +35,7 @@ ul li:last-child{
   list-style: none;
   border-bottom: 1px solid #a5a8ac;
 }
-.languages__link, .socials__item{
+.languages__link, .socials__item, .links__like{
   display: block;
   text-decoration: none;
   color: #8e9298;
@@ -83,4 +83,19 @@ ul li:last-child{
     display: block;
     margin: 6px 3px;
   }
+}
+.like-link{
+  @include sprite($like);
+  display: block;
+  margin: 0px 7px;
+
+  &:hover{
+    @include sprite($like-hover);
+    display: block;
+    margin: 0px 7px;
+  }
+}
+
+.links__socials{
+  margin-left: -43px;
 }
