@@ -13,8 +13,6 @@ block content
         li(class="languages__item")
           a(href="#").languages__link
             | ENG
-    .links__like
-      a(href="#" class="like-link")
     .links__socials
       - var icons = ['fb', 'tw', 'vk']
       ul.socials
@@ -22,6 +20,8 @@ block content
           li(class="socials__item")
             a(href="#" class="socials__link_" + icon)
       a(href="#" class="socials_link-like")
+    .links__like
+      a(href="#" class="like-link active")
   main.main_wrap
     .main_content
       include ./_common/_content

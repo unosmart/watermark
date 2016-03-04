@@ -33,9 +33,13 @@ ul li:last-child{
   padding: 0;
   margin: 0;
 }
+.links__socials{
+   float: left;
+   display: block;
+   margin-left: -43px;
+}
 .languages__item, .socials__item{
   list-style: none;
-  border-bottom: 1px solid #a5a8ac;
 }
 .languages__link, .socials__item, .links__like{
   display: block;
@@ -52,6 +56,9 @@ ul li:last-child{
   &:hover{
     color: #444a53; 
   }
+}
+.languages__link, .socials__item, .links__like{
+  border-bottom: 1px solid #a5a8ac;
 }
 .socials__link_fb{
   @include sprite($fb);
@@ -97,7 +104,7 @@ ul li:last-child{
     margin: 0px 7px;
   }
 }
-
-.links__socials{
-  margin-left: -43px;
+.links__like{
+  display: block;
+  float: left;
 }
