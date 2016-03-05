@@ -1,6 +1,6 @@
 .hr-down{
     @include sprite($hr);
-    background-repeat: no-repeat; 
+    background-repeat: no-repeat;
     position: absolute;
     right: 0;
 }
@@ -56,44 +56,32 @@
     right: 110px;
   }
 }
+
 .setting-box {
   @extend %clearfix;
-  width: 102px;
-  height: 102px;
+  width: 101px;
+  height: 101px;
   background-color: #dbe1e8;
-  // border: 1px solid #9eb2c0;
-  border-radius: 3px;
   box-sizing: border-box;
+  display: table;
+  border-collapse: collapse;
   float: left;
-  display: flex;
-  flex-flow: row wrap;
 }
 
-.settings-box__min {
-  width: 32px;
-  height: 32px;
+.settings-box__row {
+  display: table-row;
+}
+
+.settings-box__cell {
+  display: table-cell;
+  width: 33px;
+  height: 33px;
   border: 1px solid #9eb2c0;
 
   &:hover {
     background-color: #f97e76;
   }
-
-  &:nth-child(1) {
-    border-radius: 3px 0 0 0;
-  }
-
-  &:nth-child(3) {
-    border-radius: 0 3px 0 0;
-  }
-
-  &:nth-child(7) {
-    border-radius: 0 0 0 3px;
-  }
-
-  &:nth-child(9) {
-    border-radius: 0 0 3px 0;
-  }
- }
+}
 
  .settings-pos__wrap {
   width: 80px;
@@ -149,7 +137,7 @@
         width: 13px;
       @include sprite($up-arrow);
       cursor: pointer;
-      
+
       &:hover{
         @include sprite($up-arrow-h);
         cursor: pointer;
@@ -159,7 +147,7 @@
       vertical-align: bottom;
       @include sprite($down-arrow);
       cursor: pointer;
-      
+
       &:hover{
         @include sprite($down-arrow-h);
         cursor: pointer;
