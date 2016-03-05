@@ -20,7 +20,7 @@
 				slide: function(event, ui) {
 					var imgOpacity = ui.value * 0.01;
 				
-					$('#watermark').css('opacity', imgOpacity);
+					$('#watermarkImg').css('opacity', imgOpacity);
 				},
 
 				value: 100
