@@ -1,12 +1,12 @@
 .form__section.settings-wrap_file
     label.form__section__title#image Исходное изображение
     .form__file
-      input(type="text" id="img" class="form__input-img form__input-img_image" name="filename" placeholder="Image.png")
+      input(type="text" class="form__input-img form__input-img_image" name="filename" placeholder="Image.png")
       label.form__btn
-        input(type="file" class="fileupload" name="fileupload" id="main_img" )
+        input(type="file" id="main_img"  class="fileupload" name="fileupload" data-url="source/php/index.php")
     label.form__section__title#watermark Водяной знак
     .form__file
-      input(type="text" class="form__input-img form__input-img_watermark" name="filename" placeholder="Image.png" id="watermark")
+      input(type="text" class="form__input-img form__input-img_watermark" name="filename" placeholder="Image.png")
       label.form__btn
-        input(type="file" class="fileupload" id="watermark" name="fileupload" disabled)
+        input(type="file" id="watermark" class="fileupload" name="fileupload" disabled)
 .hr-down
