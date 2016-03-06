@@ -15,30 +15,30 @@
       font-family: 'RobotoLight';
       font-weight: normal;
       color: #2e3641;
-      margin-bottom: 30px;
+ //     margin-bottom: 30px;
       }
   }
   &__file{
-    width: 220px;
+    width: 224px;
     position: relative;
     margin-bottom: 20px;
-    margin-top: 5px;
+    margin-top: 8px;
     display: flex;
     flex-flow: row nowrap;
   }
   
   &__input-img{
     height: 27px;
-    width: 180px;
+    width: 183px;
     padding: 0;
     box-sizing: border-box;
     border-radius: 3px;
     outline: none;
     border: 1px solid #9eb2c0;
     color:#a4b7c4;
-    font-size: 12px;
+    font-size: 10px;
     font-family: 'RobotoLight';
-    padding-left: 10px;
+    padding-left: 5px;
     cursor:pointer;
   }
   &__btn{
