@@ -125,6 +125,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+    position: relative;
   }
    &__text{
     color: #2e3641;
@@ -149,37 +150,60 @@
     flex-flow: column nowrap;
     justify-content: space-between;
   }
-  &__control-btn{
-    position: relative;
-    display: inline-block;
-    &_up{
-      vertical-align: top;
-      height: 17px;
-        width: 13px;
-      @include sprite($up-arrow);
-      cursor: pointer;
+}
 
-      &:hover{
-        @include sprite($up-arrow-h);
-        cursor: pointer;
-      }
-    }
-    &_down{
-      vertical-align: bottom;
-      @include sprite($down-arrow);
-      cursor: pointer;
+.setting-pos__box > .ui-widget-content{
+  border: none;
+  background: none;
+  color: inherit;
+}
+.ui-spinner{
+  position: static;
+}
+.ui-icon, .ui-widget-content .ui-icon, .ui-state-default .ui-icon{
+  background: none;
+}
+.ui-spinner .ui-icon-triangle-1-n{
+  @include sprite($up-arrow);
+  cursor: pointer;
+}
 
-      &:hover{
-        @include sprite($down-arrow-h);
-        cursor: pointer;
-      }
-    }
+.ui-spinner .ui-icon-triangle-1-s{
+  @include sprite($down-arrow);
+  cursor: pointer;
+}
+
+
+.ui-spinner-button{
+ right: -6px;
+}
+.ui-spinner .ui-icon{
+  margin-top: -5px;
+}
+
+.ui-state-hover{
+  cursor: pointer;
+  .ui-icon-triangle-1-s{
+    @include sprite($down-arrow-h);
+  }
+
+  .ui-icon-triangle-1-n{
+    @include sprite($up-arrow-h);
   }
 }
-.biggerContainer{
-  position: absolute;
-  width: 750px;
-  height: 600px;
-  top: -45px;
-  left: -51px;
+.ui-state-default, .ui-widget-content .ui-state-default, .ui-widget-header .ui-state-default{
+  border: none;
+  background: none;
+  color: none;
 }
+
+
+// Удаление стрелок для input type="number"================
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+}
+input[type='number'] {
+    -moz-appearance: textfield;
+}
+//=========================================================
