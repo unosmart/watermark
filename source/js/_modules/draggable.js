@@ -1,3 +1,7 @@
 $(function() {
-    $( "#watermark" ).draggable();
+
+    $( "#watermark" ).draggable({
+      containment:'parent'
+    });
+
 });
