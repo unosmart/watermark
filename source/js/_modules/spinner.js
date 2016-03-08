@@ -12,7 +12,7 @@ $(function() {
     step : 5
   });
 
-  var myDrag = $('.content__watermark-block');
+  var myDrag = $('#watermark');
 
   spinnerX.on('spin', function(event, ui) {
     var currentVal = ui.value;
