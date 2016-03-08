@@ -6,7 +6,7 @@
 	function init() {
 /*
 Обработка основной картинки
- */
+*/
 	$('#main_img').fileupload({
 			url: 'php/',
 			dataType: 'json',
@@ -30,7 +30,6 @@
 									src: imgArray.url, // путь до файла
 									alt: imgArray.name,
 									title: imgArray.name,
-									class: 'image-upload',
 									id: 'uploaded-img' // добавим класс для изображения
 							});
 					$(".form__input-img_image").attr("placeholder", imgArray.name);
@@ -48,7 +47,7 @@
 								prop = blockWidth /blockHeight,
 								setResize = function (classCss, h, w) {
 										$img.addClass(classCss);
-										$('.image-upload').css({
+										$('#uploaded-img').css({
 												'height': h + 'px',
 												'width': w + 'px'
 										});

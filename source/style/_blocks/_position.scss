@@ -80,12 +80,13 @@
   @extend %clearfix;
   width: 101px;
   height: 101px;
+  clear: both;
   background-color: #dbe1e8;
   box-sizing: border-box;
   display: table;
   border-collapse: collapse;
   float: left;
-          margin-top: 36px;
+ margin-top: 36px;
 }
 
 .settings-box__row {
@@ -172,6 +173,54 @@
       &:hover{
         @include sprite($down-arrow-h);
         cursor: pointer;
+      }
+    }
+  }
+}
+.setting-pos{
+  @extend %clearfix;
+  margin-bottom: 32px;
+  &-disabled{
+    position: absolute;
+    background-color: rgba(241,241,245,0.64);
+    width: 260px;
+    height: 203px;
+    top: 36%;
+    left: 73%;
+    z-index: 1;
+  }
+  &__toggle{
+    float: right;
+    width: 40px;
+    margin-right: -5px;
+    margin-top: -2px;
+    
+    &-single{
+      @include sprite($single);
+      outline: none;
+        border: none;
+      float: right;
+      
+      &.active{
+        @include sprite($single-a);
+      }
+      &:hover{
+        @include sprite($single-a);
+      }
+    }
+    
+    &-tessel{
+      @include sprite($tessel);
+      outline: none;
+        border: none;
+      margin-right: 5px;
+      float: left;
+      
+      &.active{
+        @include sprite($tessel-a);
+      }
+      &:hover{
+        @include sprite($tessel-a);
       }
     }
   }
