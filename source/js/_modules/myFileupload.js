@@ -63,7 +63,19 @@
 					});
 					$("#watermarkFile").removeAttr('disabled');
 					$(".content__img-block").prepend($img);// Вставляем в поток
-					$(".disabled_block_input").css('display', 'none');
+					// анимация на блокировку input
+					var disabliedInput = $(".disabled_block_input");
+						if(disabliedInput.hasClass('hidden')) {
+							disabliedInput.removeClass('hidden');
+							setTimeout(function () {
+								disabliedInput.removeClass('visuallyhidden');
+							}, 5);
+						} else {
+							disabliedInput.addClass('visuallyhidden');
+							disabliedInput.one('transitionend', function(e) {
+								disabliedInput.addClass('hidden');
+							});
+						}
 			}		
 	});
 /*
@@ -92,9 +104,21 @@
 									title:imgArray.name,
 									id: 'watermarkImg'
 							});
-					$(".disabled_block_position").css('display', 'none');
 					$(".form__input-img_watermark").attr("placeholder", imgArray.name);
 					$(".content__watermark-block").append($watermark);// добавляем в поток
+					// анимация на блокировку position
+					var disabliedPosition = $(".disabled_block_position");
+						if(disabliedPosition.hasClass('hidden')) {
+							disabliedPosition.removeClass('hidden');
+							setTimeout(function () {
+								disabliedPosition.removeClass('visuallyhidden');
+							}, 5);
+						} else {
+							disabliedPosition.addClass('visuallyhidden');
+							disabliedPosition.one('transitionend', function(e) {
+								disabliedPosition.addClass('hidden');
+							});
+						}
 					}
 			}
 	});
