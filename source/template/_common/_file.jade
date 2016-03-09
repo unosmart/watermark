@@ -3,10 +3,10 @@
     .form__file
       input(type="text" class="form__input-img form__input-img_image" name="filename" placeholder="Image.png")
       label.form__btn
-        input(type="file" id="main_img"  class="fileupload" name="fileupload" data-url="php/index.php")
+        input(type="file" id="main_img"  class="fileupload" name="files" data-url="php/index.php" accept="image/jpeg,image/png,image/gif")
     label.form__section__title#watermark Водяной знак
     .form__file
       input(type="text" class="form__input-img form__input-img_watermark" name="filename" placeholder="Image.png")
       label.form__btn
-        input(type="file" id="watermark" class="fileupload" name="fileupload" disabled)
+        input(type="file" id="watermarkFile" class="fileupload" name="files" disabled data-url="php/index.php")
 .hr-down

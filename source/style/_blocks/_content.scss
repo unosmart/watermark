@@ -57,6 +57,7 @@
   position: absolute;
   top: 0;
   left: 50%;
+  transform: translateX(-50%);
 }
 .top02{
   position: absolute;
@@ -67,16 +68,19 @@
   position: absolute;
   top: 50%;
   left: 0;
+  transform: translate(0, -50%);
 } 
 .center11{
   position: absolute;
   top: 50%;
   left: 50%;
+  transform: translate(-50%, -50%);
 }
 .center12{
   position: absolute;
   top: 50%;
   right: 0;
+  transform: translate(0 , -50%);
 }
 .bottom20{
   position: absolute;
@@ -87,6 +91,7 @@
   position: absolute;
   bottom: 0;
   left: 50%;
+  transform: translate(-50% , 0 );
 }
 .bottom22{ 
   position: absolute; 

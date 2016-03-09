@@ -22,45 +22,45 @@ $(document).ready(function() {
      block01.on('click', function(event) {
       event.preventDefault();
       image.addClass('top01');
-      image.removeClass('content__watermark-block center12 center11 center10');
+      image.removeClass('content__watermark-block center12 center11 center10 bottom21 bottom20 bottom22');
     });
 
      block02.on('click', function(event) {
       event.preventDefault();
       image.addClass('top02');
-      image.removeClass('content__watermark-block top01 top00 center12 center11 center10');
+      image.removeClass('content__watermark-block top01 top00 center12 center11 center10 bottom21 bottom20 bottom22');
     });
 
       // second row
       block10.on('click', function(event) {
       event.preventDefault();
       image.addClass('center10');
-      image.removeClass('content__watermark-block center12 center11');
+      image.removeClass('content__watermark-block center12 center11 bottom21 bottom22 bottom20');
     });
 
      block11.on('click', function(event) {
       event.preventDefault();
       image.addClass('center11');
-      image.removeClass('content__watermark-block bottom21 bottom22 center10 bottom20');
+      image.removeClass('content__watermark-block bottom21 bottom22 center10 center12 bottom20 bottom21 bottom22');
     });
 
      block12.on('click', function(event) {
       event.preventDefault();
       image.addClass('center12');
-      image.removeClass('content__watermark-block center11 center10 top00');
+      image.removeClass('content__watermark-block center11 center10 top00 bottom21 bottom22');
     });
 
       // third row
       block20.on('click', function(event) {
       event.preventDefault();
       image.addClass('bottom20');
-      image.removeClass('content__watermark-block top01 top00 top02  center12 center11 center10 bottom21');
+      image.removeClass('content__watermark-block top01 top00 top02  center12 center11 center10 bottom21 bottom22');
     });
 
      block21.on('click', function(event) {
       event.preventDefault();
       image.addClass('bottom21');
-      image.removeClass('content__watermark-block top01 top00 top02 center12 center11 center10');
+      image.removeClass('content__watermark-block top01 top00 top02 center12 center11 center10 bottom22');
     });
 
      block22.on('click', function(event) {

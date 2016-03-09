@@ -15,7 +15,9 @@
       font-family: 'RobotoLight';
       font-weight: normal;
       color: #2e3641;
- //     margin-bottom: 30px;
+        &_pos{
+          float:left;
+        }
       }
   }
   &__file{

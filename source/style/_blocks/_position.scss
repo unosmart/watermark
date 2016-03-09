@@ -45,7 +45,7 @@
     margin-bottom: 12px;
   }
   &_pos{
-    margin-bottom: 32px;
+    margin-bottom: 4px;
   }
   &_opacity{
     margin-bottom: 30px;
@@ -80,12 +80,13 @@
   @extend %clearfix;
   width: 101px;
   height: 101px;
+  clear: both;
   background-color: #dbe1e8;
   box-sizing: border-box;
   display: table;
   border-collapse: collapse;
   float: left;
-          margin-top: 36px;
+ margin-top: 36px;
 }
 
 .settings-box__row {
@@ -125,6 +126,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+    position: relative;
   }
    &__text{
     color: #2e3641;
@@ -134,6 +136,8 @@
     color: #444a53;
   }
   &__control{
+    font-size: 24px!important;
+    font-family:'SegoeUILight'!important;
     width: 44px;
     font-size: 24px;
     line-height: 42px;
@@ -149,33 +153,114 @@
     flex-flow: column nowrap;
     justify-content: space-between;
   }
-  &__control-btn{
-    position: relative;
-    display: inline-block;
-    &_up{
-      vertical-align: top;
-      height: 17px;
-        width: 13px;
-      @include sprite($up-arrow);
-      cursor: pointer;
+}
 
+.setting-pos__box > .ui-widget-content{
+  border: none;
+  background: none;
+  color: inherit;
+}
+.ui-spinner{
+  position: static;
+}
+.ui-icon, .ui-widget-content .ui-icon, .ui-state-default .ui-icon{
+  background: none;
+}
+.ui-spinner .ui-icon-triangle-1-n{
+  @include sprite($up-arrow);
+  cursor: pointer;
+}
+
+.ui-spinner .ui-icon-triangle-1-s{
+  @include sprite($down-arrow);
+  cursor: pointer;
+}
+
+
+.ui-spinner-button{
+ right: -6px;
+}
+.ui-spinner .ui-icon{
+  margin-top: -5px;
+}
+
+.ui-state-hover{
+  cursor: pointer;
+  .ui-icon-triangle-1-s{
+    @include sprite($down-arrow-h);
+  }
+
+  .ui-icon-triangle-1-n{
+    @include sprite($up-arrow-h);
+  }
+}
+.setting-pos{
+  @extend %clearfix;
+  margin-bottom: 32px;
+  &-disabled{
+    position: absolute;
+    background-color: rgba(241,241,245,0.64);
+    width: 260px;
+    height: 203px;
+    top: 36%;
+    left: 73%;
+    z-index: 1;
+  }
+  &__toggle{
+    float: right;
+    width: 40px;
+    margin-right: -5px;
+    margin-top: -2px;
+    
+    &-single{
+      @include sprite($single);
+      outline: none;
+        border: none;
+      float: right;
+      
+      &.active{
+        @include sprite($single-a);
+      }
       &:hover{
-        @include sprite($up-arrow-h);
-        cursor: pointer;
+        @include sprite($single-a);
       }
     }
-    &_down{
-      vertical-align: bottom;
-      @include sprite($down-arrow);
-      cursor: pointer;
-
+    
+    &-tessel{
+      @include sprite($tessel);
+      outline: none;
+        border: none;
+      margin-right: 5px;
+      float: left;
+      
+      &.active{
+        @include sprite($tessel-a);
+      }
       &:hover{
-        @include sprite($down-arrow-h);
-        cursor: pointer;
+        @include sprite($tessel-a);
       }
     }
   }
 }
 .active_block{
   background: #f97e76;
+}
+.ui-spinner-input{
+  margin:0!important;
+}
+.ui-spinner{
+  margin-left: -10px;
+}
+.ui-state-default, .ui-widget-content .ui-state-default, .ui-widget-header .ui-state-default{
+  border: none;
+  background: none;
+  color: none;
+}
+// Удаление стрелок для input type="number"================
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+}
+input[type='number'] {
+    -moz-appearance: textfield;
 }
