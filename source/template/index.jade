@@ -4,7 +4,7 @@ block title
  | Генерация водяных знаков
 
 block content
-  .links
+  .links 
     .links__languages
       ul.language
         li(class="languages__item")
@@ -18,12 +18,12 @@ block content
       ul.socials
         each icon in icons
           li(class="socials__item")
-            a(href="#" class="socials__link_" + icon)
+            a(href="#" class="socials__link_" + icon) 
       a(href="#" class="socials_link-like")
     .links__like
       a(href="#" class="like-link active")
   main.main_wrap
     .main_content
       include ./_common/_content
-      aside.settings
+      aside.settings 
         include  ./_common/_settings
