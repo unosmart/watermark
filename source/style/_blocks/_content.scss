@@ -48,3 +48,53 @@
   max-width: 216px;
   max-height: 223px;
 }
+.top00{
+  position: absolute;
+  top: 0;
+  left: 0;
+} 
+.top01{
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.top02{
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+.center10{
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translate(0, -50%);
+} 
+.center11{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.center12{
+  position: absolute;
+  top: 50%;
+  right: 0;
+  transform: translate(0 , -50%);
+}
+.bottom20{
+  position: absolute;
+  bottom: 0;
+  left: 0;
+} 
+.bottom21{
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translate(-50% , 0 );
+}
+.bottom22{ 
+  position: absolute; 
+  bottom: 0;
+  right: 0;
+}

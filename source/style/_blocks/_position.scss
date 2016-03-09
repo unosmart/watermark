@@ -45,7 +45,7 @@
     margin-bottom: 12px;
   }
   &_pos{
-    margin-bottom: 32px;
+    margin-bottom: 4px;
   }
   &_opacity{
     margin-bottom: 30px;
@@ -80,12 +80,13 @@
   @extend %clearfix;
   width: 101px;
   height: 101px;
+  clear: both;
   background-color: #dbe1e8;
   box-sizing: border-box;
   display: table;
   border-collapse: collapse;
   float: left;
-          margin-top: 36px;
+ margin-top: 36px;
 }
 
 .settings-box__row {
@@ -135,6 +136,8 @@
     color: #444a53;
   }
   &__control{
+    font-size: 24px!important;
+    font-family:'SegoeUILight'!important;
     width: 44px;
     font-size: 24px;
     line-height: 42px;
@@ -191,13 +194,68 @@
     @include sprite($up-arrow-h);
   }
 }
+.setting-pos{
+  @extend %clearfix;
+  margin-bottom: 32px;
+  &-disabled{
+    position: absolute;
+    background-color: rgba(241,241,245,0.64);
+    width: 260px;
+    height: 203px;
+    top: 36%;
+    left: 73%;
+    z-index: 1;
+  }
+  &__toggle{
+    float: right;
+    width: 40px;
+    margin-right: -5px;
+    margin-top: -2px;
+    
+    &-single{
+      @include sprite($single);
+      outline: none;
+      border: none;
+      float: right;
+      
+      &_active{
+        @include sprite($single-a);
+      }
+      &:hover{
+        @include sprite($single-a);
+      }
+    }
+    
+    &-tessel{
+      @include sprite($tessel);
+      outline: none;
+        border: none;
+      margin-right: 5px;
+      float: left;
+      
+      &_active{
+        @include sprite($tessel-a);
+      }
+      &:hover{
+        @include sprite($tessel-a);
+      }
+    }
+  }
+}
+.active_block{
+  background: #f97e76;
+}
+.ui-spinner-input{
+  margin:0!important;
+}
+.ui-spinner{
+  margin-left: -10px;
+}
 .ui-state-default, .ui-widget-content .ui-state-default, .ui-widget-header .ui-state-default{
   border: none;
   background: none;
   color: none;
 }
-
-
 // Удаление стрелок для input type="number"================
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {

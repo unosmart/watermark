@@ -7,28 +7,34 @@
   attachEvents();
 
   function init() {
-
   };
 
   function attachEvents() {
-    $('#clickme').on('click', createWraps);
+    $('#tessel').on('click', enableTilingMode);
   }
 
-  function createWraps(e) {
+  function enableTilingMode(e) {
     e.preventDefault();
 
-    var tilingWraps = '<div class="tilingGrid"><div class="bigContainer">',
-        wrapper = $('.tilingGrid');
+    var singleMode = $('#single'),
+        tilingMode = $('#tessel');
 
-    $('#contentImgBlock').append(tilingWraps);
-    $('#watermark').appendTo('.bigContainer');
+    singleMode.removeClass('setting-pos__toggle-single_active');
+    tilingMode.addClass('setting-pos__toggle-tessel_active');
 
-    tileWatermark();
+    if (!tileModeOn) {
+      var tilingWraps = '<div class="tilingGrid"><div class="bigContainer">',
+          wrapper = $('.tilingGrid');
+
+      $('#contentImgBlock').append(tilingWraps);
+      $('#watermark').appendTo('.bigContainer');
+
+      tileWatermark();
+    }
   };
 
   function tileWatermark() {
 
-    if (!tileModeOn) {
       var element = $('#watermarkImg'),
           wrapper = $('.tilingGrid'),
           watermarkWidth = element.width(),
@@ -38,14 +44,13 @@
           gutterBottom = 10,
           wrapperWidth = wrapper.width(),
           wrapperHeight = wrapper.height(),
+          countWidth = Math.round(wrapperWidth / watermarkWidth),
+          countHeight = Math.round(wrapperHeight / watermarkHeight),
           i = 0,
           l = 0;
 
       tileModeOn = true;
       element.first().css('display', 'none');
-
-      var countWidth = Math.round(wrapperWidth / watermarkWidth);
-      var countHeight = Math.round(wrapperHeight / watermarkHeight);
 
       tiling.width(countWidth * (watermarkWidth + gutterLeft));
       tiling.height(countHeight * (watermarkHeight + gutterBottom));
@@ -62,7 +67,6 @@
         clone.appendTo(tiling);
         
       }
-    }
 
     dragModule.setContainment();
     dragModule.draggable();

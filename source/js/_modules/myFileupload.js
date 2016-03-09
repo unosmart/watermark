@@ -1,4 +1,4 @@
-	;(function() {
+;(function() {
 	var fileUpload = {};
 	publicMethod();
 	init();
@@ -6,10 +6,11 @@
 	function init() {
 /*
 Обработка основной картинки
- */
+*/
 	$('#main_img').fileupload({
 			url: 'php/',
 			dataType: 'json',
+			maxNumberOfFiles: 1,
 			acceptFileTypes: /(\.|\/)(gif|jpe?g|png)$/i,
 			disableImageResize: /Android(?!.*Chrome)|Opera/
 				.test(window.navigator && navigator.userAgent),
@@ -30,7 +31,6 @@
 									src: imgArray.url, // путь до файла
 									alt: imgArray.name,
 									title: imgArray.name,
-									class: 'image-upload',
 									id: 'uploaded-img' // добавим класс для изображения
 							});
 					$(".form__input-img_image").attr("placeholder", imgArray.name);
@@ -48,7 +48,7 @@
 								prop = blockWidth /blockHeight,
 								setResize = function (classCss, h, w) {
 										$img.addClass(classCss);
-										$('.image-upload').css({
+										$('#uploaded-img').css({
 												'height': h + 'px',
 												'width': w + 'px'
 										});
@@ -64,7 +64,20 @@
 					});
 					$("#watermarkFile").removeAttr('disabled');
 					$(".content__img-block").prepend($img);// Вставляем в поток
-			}
+					// анимация на блокировку input
+					var disabliedInput = $(".disabled_block_input");
+						if(disabliedInput.hasClass('hidden')) {
+							disabliedInput.removeClass('hidden');
+							setTimeout(function () {
+								disabliedInput.removeClass('visuallyhidden');
+							}, 5);
+						} else {
+							disabliedInput.addClass('visuallyhidden');
+							disabliedInput.one('transitionend', function(e) {
+								disabliedInput.addClass('hidden');
+							});
+						}
+			}		
 	});
 /*
 Обработка водяного знака
@@ -94,19 +107,29 @@
 							});
 					$(".form__input-img_watermark").attr("placeholder", imgArray.name);
 					$(".content__watermark-block").append($watermark);// добавляем в поток
+					// анимация на блокировку position
+					var disabliedPosition = $(".disabled_block_position");
+						if(disabliedPosition.hasClass('hidden')) {
+							disabliedPosition.removeClass('hidden');
+							setTimeout(function () {
+								disabliedPosition.removeClass('visuallyhidden');
+							}, 5);
+						} else {
+							disabliedPosition.addClass('visuallyhidden');
+							disabliedPosition.one('transitionend', function(e) {
+								disabliedPosition.addClass('hidden');
+							});
+						}
 					}
 			}
 	});
-
 	};
 	function attachEvents() {
 	};
 	function publicMethod() {
 		fileUpload = {
-			
 		}
 	};
-
 	window.myFileUpload = fileUpload;
 })();
 

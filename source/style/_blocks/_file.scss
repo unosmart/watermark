@@ -15,7 +15,9 @@
       font-family: 'RobotoLight';
       font-weight: normal;
       color: #2e3641;
- //     margin-bottom: 30px;
+        &_pos{
+          float:left;
+        }
       }
   }
   &__file{
@@ -26,7 +28,7 @@
     display: flex;
     flex-flow: row nowrap;
   }
-  
+
   &__input-img{
     height: 27px;
     width: 183px;
@@ -51,7 +53,7 @@
     width: 39px;
     box-sizing: border-box;
     border-radius: 0px 5px 5px 0;
-    cursor: pointer; 
+    cursor: pointer;
     background:#f97e76;
       &:before{
         position: absolute;
@@ -61,6 +63,9 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%,-50%);
+      }
+      &:hover{
+       background: #f52214;
       }
   }
 }
@@ -73,3 +78,29 @@
     overflow: hidden;
     padding: 0;
   }
+.disabled_block_input{
+    position: absolute;
+    background-color: rgba(241, 241, 245, 0.64);
+    width: 258px;
+    height: 85px;
+    top: 24%;
+    left: 0%;
+    z-index: 1;
+    transition: all 1s linear;
+  }
+.hidden{
+    display: none;
+  }
+.visuallyhidden {
+  opacity: 0;
+}
+.disabled_block_position{
+    position: absolute;
+    background-color: rgba(241, 241, 245, 0.64);
+    width: 258px;
+    height: 47%;
+    top: 36%;
+    left: 0%;
+    z-index: 10;
+    transition: all 1s linear;
+}
