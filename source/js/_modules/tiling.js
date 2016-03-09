@@ -1,54 +1,78 @@
 ;(function() {
-	var tilingModule 	= {},
-			tileModeOn 		= false;
+  var tilingModule  = {},
+      tileModeOn = false;
 
-	publicMethod();
-	init();
-	attachEvents();
+  publicMethod();
+  init();
+  attachEvents();
 
-	function init() {
-		// Some code..functions that are needed for module initialization 
-	};
+  function init() {
 
-	function attachEvents() {
-		$('#clickme').on('click', tileWatermark);
-	}
+  };
 
-	function tileWatermark(e) {
-		e.preventDefault();
+  function attachEvents() {
+    $('#clickme').on('click', createWraps);
+  }
 
-		if (!tileModeOn) {
-			
-			var biggerContainer = '<div class="biggerContainer">';
+  function createWraps(e) {
+    e.preventDefault();
 
-			tileModeOn = true;
-			$('#contentImgBlock').append(biggerContainer);
+    var tilingWraps = '<div class="tilingGrid"><div class="bigContainer">',
+        wrapper = $('.tilingGrid');
 
-			$('#watermark').css({
-				left: '0',
-				top: '0'
-			});
+    $('#contentImgBlock').append(tilingWraps);
+    $('#watermark').appendTo('.bigContainer');
 
-			for (var i = 0; i < 5; i++) {
-				cloneWatermark(i);
-			}
+    tileWatermark();
+  };
 
-			$('#watermark').appendTo('.biggerContainer')
-		}
+  function tileWatermark() {
 
-	};
+    if (!tileModeOn) {
+      var element = $('#watermarkImg'),
+          wrapper = $('.tilingGrid'),
+          watermarkWidth = element.width(),
+          watermarkHeight = element.height(),
+          tiling = $('#watermark'),
+          gutterLeft = 10,
+          gutterBottom = 10,
+          wrapperWidth = wrapper.width(),
+          wrapperHeight = wrapper.height(),
+          i = 0,
+          l = 0;
 
-	function cloneWatermark() {
-		var $clone = $('#watermarkImg').clone(true, true);
+      tileModeOn = true;
+      element.first().css('display', 'none');
 
-		$($clone).appendTo('#watermark');
-	};
+      var countWidth = Math.round(wrapperWidth / watermarkWidth);
+      var countHeight = Math.round(wrapperHeight / watermarkHeight);
 
-	function publicMethod() {
-		tilingModule = {
-			// name : public function
-		}
-	};
+      tiling.width(countWidth * (watermarkWidth + gutterLeft));
+      tiling.height(countHeight * (watermarkHeight + gutterBottom));
 
-	window.moduleName = tilingModule;
+      for (i, l = countHeight * countWidth; i < l; i++) {
+        var clone = $('#watermarkImg').clone();
+        clone.css({
+          display: 'block',
+          float: 'left',
+          'margin-left': gutterLeft,
+          'margin-bottom': gutterBottom
+        });
+
+        clone.appendTo(tiling);
+        
+      }
+    }
+
+    dragModule.setContainment();
+    dragModule.draggable();
+  };
+
+  function publicMethod() {
+    tilingModule = {
+      
+    }
+  };
+
+  window.tilingModule = tilingModule;
 })();

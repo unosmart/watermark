@@ -37,6 +37,6 @@
 		}
 	};
 
-	window.moduleName = opacityModule;
+	window.opacityModule = opacityModule;
 })();
 
