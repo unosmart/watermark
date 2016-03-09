@@ -63,7 +63,8 @@
 					});
 					$("#watermarkFile").removeAttr('disabled');
 					$(".content__img-block").prepend($img);// Вставляем в поток
-			}
+					$(".disabled_block_input").css('display', 'none');
+			}		
 	});
 /*
 Обработка водяного знака
@@ -91,6 +92,7 @@
 									title:imgArray.name,
 									id: 'watermarkImg'
 							});
+					$(".disabled_block_position").css('display', 'none');
 					$(".form__input-img_watermark").attr("placeholder", imgArray.name);
 					$(".content__watermark-block").append($watermark);// добавляем в поток
 					}
