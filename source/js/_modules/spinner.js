@@ -29,5 +29,4 @@ $(function() {
       top: currentVal + 'px'
     });
   });
-
 });
