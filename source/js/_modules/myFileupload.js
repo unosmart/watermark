@@ -43,8 +43,8 @@
 									});
 						var width = $(this).width(),//Выбираем размер
 								height = $(this).height(),
-								blockHeight = $('.content__img-block').height(),
-								blockWidth = $('.content__img-block').width(),
+								blockHeight = $('.content__main-window').height(),
+								blockWidth = $('.content__main-window').width(),
 								prop = blockWidth /blockHeight,
 								setResize = function (classCss, h, w) {
 										$img.addClass(classCss);
@@ -57,7 +57,7 @@
 									setResize('', height, width);
 							} else if (width > height) {
 									setResize('image-horizantal ', Math.round(blockWidth * height / width), blockWidth);
-							} else {
+							} else if (width < height){
 									setResize('image-vertical ', blockHeight, Math.round(blockHeight * width / height));
 							}
 							console.log(blockHeight);console.log(blockWidth);
