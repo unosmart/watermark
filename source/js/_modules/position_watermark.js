@@ -1,4 +1,5 @@
-var myModule = (function (){
+var singleModule = (function (){
+    var singleMode = false;
 
   var init = function () {
     _setUpListners();
@@ -20,15 +21,39 @@ var myModule = (function (){
     $('.block22').on('click', _block22);
 
   };
-  //Переключение 
+  // Переключение 
   var _singleMode = function (e) {
     e.preventDefault();
-    var singleMode = $('#single'),
-        tilingMode = $('#tessel');
+    var single = $('#single'),
+        tilingBtn = $('#tessel'),
+        bigContainer = $('.bigContainer'),
+        watermarkBlock = $('#watermark'),
+        firstElement = $('#watermarkImg').first(),
+        elems = $('#watermarkImg').siblings();
 
+    tilingModule.tilingMode = false;
+    singleMode = false;
+    single.addClass('setting-pos__toggle-single_active');
+    tilingBtn.removeClass('setting-pos__toggle-tessel_active');
 
-    singleMode.addClass('setting-pos__toggle-single_active');
-    tilingMode.removeClass('setting-pos__toggle-tessel_active');
+    if (!singleModule.singleMode) {
+      singleModule.singleMode = true;
+
+      dragModule.setContainment();
+      bigContainer.unwrap();
+      watermarkBlock.unwrap();
+      firstElement.css({
+        display: 'block',
+        postion: 'absolute'
+      });
+      $('#watermark').css({
+        left: '0',
+        top: '0',
+        height: 'auto',
+        width: 'auto'
+      });
+      elems.remove();
+    }
   };
 
   var _block00 = function (e) {
@@ -179,8 +204,9 @@ var myModule = (function (){
   }
   
   return {
-    init: init
+    init: init,
+    singleMode: singleMode = false
   };
 
 })();
-myModule.init();
+singleModule.init();

@@ -12,7 +12,19 @@
   attachEvents();
 
   function init() {
-    dragModule.draggable();
+    /**
+     * Initialization of Draggable
+     */
+    $("#watermark").draggable({
+
+      containment: 'parent',
+
+      drag: function(e, ui) {
+        control_X.val(ui.position.top);
+        control_Y.val(ui.position.left);
+      }
+    });
+   
   };
 
   function attachEvents() {
@@ -20,20 +32,6 @@
 
   function publicMethod() {
     dragModule = {
-      /**
-       * Method for initialization of Draggable
-       */
-      draggable: function() {
-        $("#watermark").draggable({
-
-          containment: 'parent',
-
-          drag: function(e, ui) {
-            control_X.val(ui.position.top);
-            control_Y.val(ui.position.left);
-          }
-       });
-      },
       /**
        * Method for setting containment parent.
        */

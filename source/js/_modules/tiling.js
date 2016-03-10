@@ -1,6 +1,6 @@
 ;(function() {
   var tilingModule  = {},
-      tileModeOn = false;
+      tilingMode = false;
 
   publicMethod();
   init();
@@ -17,17 +17,22 @@
     e.preventDefault();
 
     var singleMode = $('#single'),
-        tilingMode = $('#tessel');
+        tilingBtn = $('#tessel'),
+        contentImgBlock = $('#contentImgBlock'),
+        watermarkBlock = $('#watermark');
 
+    singleModule.singleMode = false;
     singleMode.removeClass('setting-pos__toggle-single_active');
-    tilingMode.addClass('setting-pos__toggle-tessel_active');
+    tilingBtn.addClass('setting-pos__toggle-tessel_active');
 
-    if (!tileModeOn) {
+    if (!tilingModule.tilingMode) {
       var tilingWraps = '<div class="tilingGrid"><div class="bigContainer">',
           wrapper = $('.tilingGrid');
 
-      $('#contentImgBlock').append(tilingWraps);
-      $('#watermark').appendTo('.bigContainer');
+      tilingModule.tilingMode = true;
+
+      contentImgBlock.append(tilingWraps);
+      watermarkBlock.appendTo('.bigContainer');
 
       tileWatermark();
     }
@@ -49,7 +54,10 @@
           i = 0,
           l = 0;
 
-      tileModeOn = true;
+      tiling.css({
+        left: '0',
+        top: '0'
+      });
       element.first().css('display', 'none');
 
       tiling.width(countWidth * (watermarkWidth + gutterLeft));
@@ -69,12 +77,11 @@
       }
 
     dragModule.setContainment();
-    dragModule.draggable();
   };
 
   function publicMethod() {
     tilingModule = {
-      
+      tilingMode: tilingMode = false
     }
   };
 
