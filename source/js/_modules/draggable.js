@@ -4,6 +4,8 @@
  */
 ;(function(){
   var dragModule = {};
+  var control_X = $('#control_X');
+  var control_Y = $('#control_Y');
 
   publicMethod();
   init();
@@ -26,9 +28,9 @@
 
           containment: 'parent',
 
-          drag: function(e) {
-            $('#control_X').val(e.offsetX);
-            $('#control_Y').val(e.offsetY);
+          drag: function(e, ui) {
+            control_X.val(ui.position.top);
+            control_Y.val(ui.position.left);
           }
        });
       },

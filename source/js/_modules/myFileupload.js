@@ -65,7 +65,7 @@
 					$("#watermarkFile").removeAttr('disabled');
 					$(".content__img-block").prepend($img);// Вставляем в поток
 					// анимация на блокировку input
-					var disabliedInput = $(".disabled_block_input");
+					var disabliedInput = $(".form__section_disabledInput");
 						if(disabliedInput.hasClass('hidden')) {
 							disabliedInput.removeClass('hidden');
 							setTimeout(function () {
@@ -108,7 +108,7 @@
 					$(".form__input-img_watermark").attr("placeholder", imgArray.name);
 					$(".content__watermark-block").append($watermark);// добавляем в поток
 					// анимация на блокировку position
-					var disabliedPosition = $(".disabled_block_position");
+					var disabliedPosition = $(".form__section_disabledSettings");
 						if(disabliedPosition.hasClass('hidden')) {
 							disabliedPosition.removeClass('hidden');
 							setTimeout(function () {

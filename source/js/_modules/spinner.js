@@ -8,7 +8,7 @@ $(function() {
 
   var spinnerY = $( "#control_Y" ).spinner({
     min : 0,
-    max : 325,
+    max : 326,
     step : 5
   });
 

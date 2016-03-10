@@ -78,7 +78,7 @@
     overflow: hidden;
     padding: 0;
   }
-.disabled_block_input{
+.form__section_disabledInput{
     position: absolute;
     background-color: rgba(241, 241, 245, 0.64);
     width: 258px;
@@ -94,11 +94,11 @@
 .visuallyhidden {
   opacity: 0;
 }
-.disabled_block_position{
+.form__section_disabledSettings{
     position: absolute;
     background-color: rgba(241, 241, 245, 0.64);
     width: 258px;
-    height: 47%;
+    height: 64%;
     top: 36%;
     left: 0%;
     z-index: 10;
