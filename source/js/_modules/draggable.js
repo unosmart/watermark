@@ -20,8 +20,8 @@
       containment: 'parent',
 
       drag: function(e, ui) {
-        control_X.val(ui.position.top);
-        control_Y.val(ui.position.left);
+        control_X.val(ui.position.left);
+        control_Y.val(ui.position.top);
       }
     });
    
