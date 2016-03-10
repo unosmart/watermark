@@ -215,10 +215,10 @@
     &-single{
       @include sprite($single);
       outline: none;
-        border: none;
+      border: none;
       float: right;
       
-      &.active{
+      &_active{
         @include sprite($single-a);
       }
       &:hover{
@@ -233,7 +233,7 @@
       margin-right: 5px;
       float: left;
       
-      &.active{
+      &_active{
         @include sprite($tessel-a);
       }
       &:hover{
@@ -264,3 +264,20 @@ input::-webkit-inner-spin-button {
 input[type='number'] {
     -moz-appearance: textfield;
 }
+//=========================================================
+
+
+.bigContainer{
+  position: absolute;
+  width: 1150px;
+  height: 900px;
+  top: -200px;
+  left: -255px;
+}
+.tilingGrid{
+  height: 700px;
+  width: 800px;
+  position: absolute;
+  left: 0;
+  top: 0;
+ }

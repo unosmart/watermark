@@ -20,7 +20,7 @@
 				slide: function(event, ui) {
 					var imgOpacity = ui.value * 0.01;
 				
-					$('#watermarkImg').css('opacity', imgOpacity);
+					$('#watermark').css('opacity', imgOpacity);
 				},
 
 				value: 100
@@ -37,6 +37,6 @@
 		}
 	};
 
-	window.moduleName = opacityModule;
+	window.opacityModule = opacityModule;
 })();
 

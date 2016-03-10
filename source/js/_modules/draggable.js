@@ -1,13 +1,45 @@
-$(function() {
+/**
+ * Module for initialization of Draggable
+ * @return {object} Returns object with initialization method.
+ */
+;(function(){
+  var dragModule = {};
 
-    $( "#watermark" ).draggable({
-      containment:'parent',
+  publicMethod();
+  init();
+  attachEvents();
 
-      drag: function(e) {
-        $('#control_X').val(e.offsetX);
-        $('#control_Y').val(e.offsetY);
+  function init() {
+    dragModule.draggable();
+  };
+
+  function attachEvents() {
+  };
+
+  function publicMethod() {
+    dragModule = {
+      /**
+       * Method for initialization of Draggable
+       */
+      draggable: function() {
+        $("#watermark").draggable({
+
+          containment: 'parent',
+
+          drag: function(e) {
+            $('#control_X').val(e.offsetX);
+            $('#control_Y').val(e.offsetY);
+          }
+       });
+      },
+      /**
+       * Method for setting containment parent.
+       */
+      setContainment: function() {
+        $("#watermark").draggable( "option", "containment", "parent" );
       }
+    }
+  };
 
-    });
-
-});
+  window.dragModule = dragModule;
+})();

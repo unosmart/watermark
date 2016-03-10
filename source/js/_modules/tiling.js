@@ -1,54 +1,82 @@
 ;(function() {
-	var tilingModule 	= {},
-			tileModeOn 		= false;
+  var tilingModule  = {},
+      tileModeOn = false;
 
-	publicMethod();
-	init();
-	attachEvents();
+  publicMethod();
+  init();
+  attachEvents();
 
-	function init() {
-		// Some code..functions that are needed for module initialization 
-	};
+  function init() {
+  };
 
-	function attachEvents() {
-		$('#clickme').on('click', tileWatermark);
-	}
+  function attachEvents() {
+    $('#tessel').on('click', enableTilingMode);
+  }
 
-	function tileWatermark(e) {
-		e.preventDefault();
+  function enableTilingMode(e) {
+    e.preventDefault();
 
-		if (!tileModeOn) {
-			
-			var biggerContainer = '<div class="biggerContainer">';
+    var singleMode = $('#single'),
+        tilingMode = $('#tessel');
 
-			tileModeOn = true;
-			$('#contentImgBlock').append(biggerContainer);
+    singleMode.removeClass('setting-pos__toggle-single_active');
+    tilingMode.addClass('setting-pos__toggle-tessel_active');
 
-			$('#watermark').css({
-				left: '0',
-				top: '0'
-			});
+    if (!tileModeOn) {
+      var tilingWraps = '<div class="tilingGrid"><div class="bigContainer">',
+          wrapper = $('.tilingGrid');
 
-			for (var i = 0; i < 5; i++) {
-				cloneWatermark(i);
-			}
+      $('#contentImgBlock').append(tilingWraps);
+      $('#watermark').appendTo('.bigContainer');
 
-			$('#watermark').appendTo('.biggerContainer')
-		}
+      tileWatermark();
+    }
+  };
 
-	};
+  function tileWatermark() {
 
-	function cloneWatermark() {
-		var $clone = $('#watermarkImg').clone(true, true);
+      var element = $('#watermarkImg'),
+          wrapper = $('.tilingGrid'),
+          watermarkWidth = element.width(),
+          watermarkHeight = element.height(),
+          tiling = $('#watermark'),
+          gutterLeft = 10,
+          gutterBottom = 10,
+          wrapperWidth = wrapper.width(),
+          wrapperHeight = wrapper.height(),
+          countWidth = Math.round(wrapperWidth / watermarkWidth),
+          countHeight = Math.round(wrapperHeight / watermarkHeight),
+          i = 0,
+          l = 0;
 
-		$($clone).appendTo('#watermark');
-	};
+      tileModeOn = true;
+      element.first().css('display', 'none');
 
-	function publicMethod() {
-		tilingModule = {
-			// name : public function
-		}
-	};
+      tiling.width(countWidth * (watermarkWidth + gutterLeft));
+      tiling.height(countHeight * (watermarkHeight + gutterBottom));
 
-	window.moduleName = tilingModule;
+      for (i, l = countHeight * countWidth; i < l; i++) {
+        var clone = $('#watermarkImg').clone();
+        clone.css({
+          display: 'block',
+          float: 'left',
+          'margin-left': gutterLeft,
+          'margin-bottom': gutterBottom
+        });
+
+        clone.appendTo(tiling);
+        
+      }
+
+    dragModule.setContainment();
+    dragModule.draggable();
+  };
+
+  function publicMethod() {
+    tilingModule = {
+      
+    }
+  };
+
+  window.tilingModule = tilingModule;
 })();
