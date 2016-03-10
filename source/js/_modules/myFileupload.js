@@ -55,7 +55,7 @@
 								};
 							if ((width < blockWidth) && (height < blockHeight)) {//Проверяем нужно ли ресайзить
 									setResize('', height, width);
-							} else if (width > height) {
+							} else if (f < width / height) {
 									setResize('image-horizantal ', Math.round(blockWidth * height / width), blockWidth);
 							} else if (width < height){
 									setResize('image-vertical ', blockHeight, Math.round(blockHeight * width / height));
