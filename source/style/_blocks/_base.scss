@@ -57,6 +57,11 @@ ul li:last-child{
     color: #444a53; 
   }
 }
+.languages__link{
+  &_active{
+     color: #444a53; 
+  }
+}
 .languages__link, .socials__item, .links__like{
   border-bottom: 1px solid #a5a8ac;
 }

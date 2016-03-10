@@ -1,4 +1,4 @@
-	;(function() {
+;(function() {
 	var fileUpload = {};
 	publicMethod();
 	init();
@@ -10,6 +10,7 @@
 	$('#main_img').fileupload({
 			url: 'php/',
 			dataType: 'json',
+			maxNumberOfFiles: 1,
 			acceptFileTypes: /(\.|\/)(gif|jpe?g|png)$/i,
 			disableImageResize: /Android(?!.*Chrome)|Opera/
 				.test(window.navigator && navigator.userAgent),
@@ -122,16 +123,13 @@
 					}
 			}
 	});
-
 	};
 	function attachEvents() {
 	};
 	function publicMethod() {
 		fileUpload = {
-			
 		}
 	};
-
 	window.myFileUpload = fileUpload;
 })();
 
