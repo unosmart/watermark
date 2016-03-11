@@ -67,7 +67,7 @@ var singleModule = (function (){
         bottom: ''
       });
     var top = parseInt(image.css('top'));
-    var left = image.css('left');
+    var left = parseInt(image.css('left'));
     $('#control_X').val(left);
     $('#control_Y').val(top);
     console.log(top);
@@ -84,7 +84,7 @@ var singleModule = (function (){
         bottom: ''
       });
     var top = parseInt(image.css('top'));
-    var left = image.css('left');
+    var left = parseInt(image.css('left'));
     $('#control_Y').val(top);
     $('#control_X').val(left);
 
@@ -101,7 +101,7 @@ var singleModule = (function (){
         bottom: ''
       });
     var top = parseInt(image.css('top'));
-    var right = image.css('left');
+    var right = parseInt(image.css('left'));
     $('#control_Y').val(top);
     $('#control_X').val(right);
     console.log($('#control_y'));
@@ -118,7 +118,7 @@ var singleModule = (function (){
         bottom: ''
       });
     var top = parseInt(image.css('top'));
-    var left = image.css('left');
+    var left = parseInt(image.css('left'));
     $('#control_Y').val(top);
     $('#control_X').val(left);
   }
@@ -134,7 +134,7 @@ var singleModule = (function (){
         bottom: ''
       });
     var top = parseInt(image.css('top'));
-    var left = image.css('left');
+    var left = parseInt(image.css('left'));
     $('#control_Y').val(top);
     $('#control_X').val(left);
   }
@@ -150,7 +150,7 @@ var singleModule = (function (){
         bottom: ''
       });
     var top = parseInt(image.css('top'));
-    var right = image.css('left');
+    var right = parseInt(image.css('left'));
     $('#control_Y').val(top);
     $('#control_X').val(right);
   }
@@ -165,8 +165,8 @@ var singleModule = (function (){
         right: '',
         bottom: ''
       });
-    var top = parseInt(image.css('bottom'));
-    var left = image.css('left');
+    var top = parseInt(image.css('top'));
+    var left = parseInt(image.css('left'));
     $('#control_Y').val(top);
     $('#control_X').val(left);
   }
@@ -181,8 +181,8 @@ var singleModule = (function (){
         right: '',
         bottom: ''
       });
-    var top = parseInt(image.css('bottom'));
-    var left = image.css('left');
+    var top = parseInt(image.css('top'));
+    var left = parseInt(image.css('left'));
     $('#control_Y').val(top);
     $('#control_X').val(left);
   }
@@ -197,8 +197,8 @@ var singleModule = (function (){
         right: '',
         bottom: ''
       });
-    var top = parseInt(image.css('bottom'));
-    var right = image.css('left');
+    var top = parseInt(image.css('top'));
+    var right = parseInt(image.css('left'));
     $('#control_Y').val(top);
     $('#control_X').val(right);
   }
