@@ -19,7 +19,7 @@ var singleModule = (function (){
     $('.block20').on('click', _block20);
     $('.block21').on('click', _block21);
     $('.block22').on('click', _block22);
-
+    $('#reset').on('click', resetPos); // Сбрасываем при нажатии на Сброс
   };
   // Переключение 
   var _singleMode = function (e) {
@@ -67,7 +67,7 @@ var singleModule = (function (){
         bottom: ''
       });
     var top = parseInt(image.css('top'));
-    var left = image.css('left');
+    var left = parseInt(image.css('left'));
     $('#control_X').val(left);
     $('#control_Y').val(top);
     console.log(top);
@@ -84,7 +84,7 @@ var singleModule = (function (){
         bottom: ''
       });
     var top = parseInt(image.css('top'));
-    var left = image.css('left');
+    var left = parseInt(image.css('left'));
     $('#control_Y').val(top);
     $('#control_X').val(left);
 
@@ -101,7 +101,7 @@ var singleModule = (function (){
         bottom: ''
       });
     var top = parseInt(image.css('top'));
-    var right = image.css('left');
+    var right = parseInt(image.css('left'));
     $('#control_Y').val(top);
     $('#control_X').val(right);
     console.log($('#control_y'));
@@ -118,7 +118,7 @@ var singleModule = (function (){
         bottom: ''
       });
     var top = parseInt(image.css('top'));
-    var left = image.css('left');
+    var left = parseInt(image.css('left'));
     $('#control_Y').val(top);
     $('#control_X').val(left);
   }
@@ -134,7 +134,7 @@ var singleModule = (function (){
         bottom: ''
       });
     var top = parseInt(image.css('top'));
-    var left = image.css('left');
+    var left = parseInt(image.css('left'));
     $('#control_Y').val(top);
     $('#control_X').val(left);
   }
@@ -150,7 +150,7 @@ var singleModule = (function (){
         bottom: ''
       });
     var top = parseInt(image.css('top'));
-    var right = image.css('left');
+    var right = parseInt(image.css('left'));
     $('#control_Y').val(top);
     $('#control_X').val(right);
   }
@@ -165,8 +165,8 @@ var singleModule = (function (){
         right: '',
         bottom: ''
       });
-    var top = parseInt(image.css('bottom'));
-    var left = image.css('left');
+    var top = parseInt(image.css('top'));
+    var left = parseInt(image.css('left'));
     $('#control_Y').val(top);
     $('#control_X').val(left);
   }
@@ -181,8 +181,8 @@ var singleModule = (function (){
         right: '',
         bottom: ''
       });
-    var top = parseInt(image.css('bottom'));
-    var left = image.css('left');
+    var top = parseInt(image.css('top'));
+    var left = parseInt(image.css('left'));
     $('#control_Y').val(top);
     $('#control_X').val(left);
   }
@@ -197,15 +197,27 @@ var singleModule = (function (){
         right: '',
         bottom: ''
       });
-    var top = parseInt(image.css('bottom'));
-    var right = image.css('left');
+    var top = parseInt(image.css('top'));
+    var right = parseInt(image.css('left'));
     $('#control_Y').val(top);
     $('#control_X').val(right);
   }
-  
+
+   function resetPos() {
+    var top = 0,
+        left = 0,
+        control_X = $('#control_X'),
+        control_Y = $('#control_Y'),
+        img = $('#watermark');
+    img.css('top',0).css('left',0);
+    control_Y.val(top);
+    control_X.val(left);
+  };
+
   return {
     init: init,
-    singleMode: singleMode = false
+    singleMode: singleMode = false,
+    resetPos: resetPos, // Функция сброса 
   };
 
 })();

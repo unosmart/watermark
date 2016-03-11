@@ -62,7 +62,8 @@
 .top02{
   position: absolute;
   top: 0;
-  right: 0;
+  left: 100%;
+  transform: translateX(-100%);
 }
 .center10{
   position: absolute;
@@ -79,27 +80,26 @@
 .center12{
   position: absolute;
   top: 50%;
-  right: 0;
-  transform: translate(0 , -50%);
+  left: 100%;
+  transform: translate(-100% , -50%);
 }
 .bottom20{
   position: absolute;
-  bottom: 0;
+  top: 100%;
   left: 0;
+  transform: translateY(-100%);
 } 
 .bottom21{
   position: absolute;
-  bottom: 0;
+  top: 100%;
   left: 50%;
-  transform: translate(-50% , 0 );
+  transform: translate(-50% , -100% );
 }
 .bottom22{ 
   position: absolute; 
-  bottom: 0;
-  right: 0;
-}
-.image-vertical{
-  max-height: 100%;
+  top: 100%;
+  left: 100%;
+  transform: translate(-100% , -100%);
 }
 .image-vertical{
   max-height: 100%;

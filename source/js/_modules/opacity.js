@@ -16,10 +16,12 @@
 		 * @param  {object} ui)    {					var    imgOpacity    Contains determining of position of the slider converted to the opacity units. 
 		 * @param  {property} value: 100		}       Property that sets the initial position of the handle.
 		 */
+		
 		$("#slider").slider({
 				slide: function(event, ui) {
-					var imgOpacity = ui.value * 0.01;
-				
+					var imgOpacity = ui.value * 0.01,
+					$opacityInput = $('#opacity-input');
+					$opacityInput.val(ui.value);
 					$('#watermark').css('opacity', imgOpacity);
 				},
 
