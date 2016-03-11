@@ -14,14 +14,24 @@ block content
           a(href="#" lang="eng").languages__link.languages__link_en
             | ENG
     .links__socials
-      - var icons = ['fb', 'tw', 'vk']
       ul.socials
-        each icon in icons
-          li(class="socials__item")
-            a(href="#" class="socials__link_" + icon) 
-      a(href="#" class="socials_link-like")
+        li(class="socials__item")
+          a(class= "socials__link_fb socials__link" href="#" data-social="fb")
+        li(class="socials__item")
+          a(class= "socials__link_tw socials__link" href="#" data-social="tw")
+        li(class="socials__item")
+          a( class= "socials__link_vk socials__link" href="#" data-social="vk")  
     .links__like
-      a(href="#" class="like-link active")
+        a(class= "like-link" href="#")          
+    //- .links__socials
+    //-   - var icons = ['fb', 'tw', 'vk']
+    //-   ul.socials
+    //-     each icon in icons
+    //-       li(class="socials__item")
+    //-         a(href="#" class="socials__link_" + icon) 
+    //-   a(href="#" class="socials_link-like")
+    //- .links__like
+    //-   a(href="#" class="like-link active")
   main.main_wrap
     .main_content
       include ./_common/_content
