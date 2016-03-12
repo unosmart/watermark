@@ -1,7 +1,6 @@
 ;(function() {
   var singleModeSpinnerModule = {},
       myDrag = $('#watermark'),
-      watermarkImg = $('#watermarkImg'),
       spinnerX = null,
       spinnerY = null;
 
@@ -49,18 +48,20 @@
 
   function moveGutterX(event, ui) {
     var currentVal = ui.value,
+        watermarkImg = $('#watermarkImg'),
         waterImgs = watermarkImg.siblings();
 
-   waterImgs.css ({
+    waterImgs.css ({
       'margin-left': currentVal + 'px'
     });
   };
 
   function moveGutterY(event, ui, selectors) {
     var currentVal = ui.value,
-    waterImgs = watermarkImg.siblings();
+        watermarkImg = $('#watermarkImg'),
+        waterImgs = watermarkImg.siblings();
     
-    waterImgs.css ({
+    waterImgs.siblings().css ({
       'margin-bottom': currentVal + 'px'
     });
   };
@@ -86,7 +87,7 @@
           step : 1
         });
       },
-      
+
       singleModeSpenner: function() {
         init();
       }
