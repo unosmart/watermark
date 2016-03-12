@@ -48,6 +48,9 @@
   max-width: 216px;
   max-height: 223px;
 }
+#watermark{
+  position: absolute;
+}
 .top00{
   position: absolute;
   top: 0;
@@ -57,7 +60,6 @@
   position: absolute;
   top: 0;
   left: 50%;
-  transform: translateX(-50%);
 }
 .top02{
   position: absolute;

@@ -9,17 +9,8 @@ var singleModule = (function (){
 
   var _setUpListners = function () {
     $('#single').on('click', _singleMode); // открыть singleMode
-    $('.block00').on('click', _block00);
-    $('.block01').on('click', _block01);
-    $('.block02').on('click', _block02);
-
-    $('.block10').on('click', _block10);
-    $('.block11').on('click', _block11);
-    $('.block12').on('click', _block12);
-
-    $('.block20').on('click', _block20);
-    $('.block21').on('click', _block21);
-    $('.block22').on('click', _block22);
+  
+    $('.settings-box__cell').on('click', _position);
 
   };
   // Переключение 
@@ -57,154 +48,124 @@ var singleModule = (function (){
       elems.remove();
     }
   };
+  // Позиционирование
+  var _position = function (e) {
+    var heightBig = $('#contentImgBlock').innerHeight();
+    var widthBig = $('#contentImgBlock').innerWidth();
 
-  var _block00 = function (e) {
-    e.preventDefault();
-    image.addClass('top00');
-      image.removeClass('content__watermark-block top02 top01 center12 center11 center10 bottom21 bottom20 bottom22');
-      image.css({
-        top: '',
-        left: '',
-        right: '',
-        bottom: ''
-      });
-    var top = parseInt(image.css('top'));
-    var left = parseInt(image.css('left'));
-    $('#control_X').val(left);
-    $('#control_Y').val(top);
-    console.log(top);
+    var heightSmall = $('#watermark').innerHeight();
+    var widthSmall = $('#watermark').innerWidth();
+
+    var block = $('.settings-box__cell');
+    var image = $('#watermark');
+
+    var block = $(this);
+
+    switch (block.data("position")) {
+      case 1 :
+       image.css({
+         position: 'absolute',
+         top: 0,
+         left: 0
+       });
+      var top = parseInt(image.css('top'));
+      var left = parseInt(image.css('left'));
+      $('#control_X').val(left);
+      $('#control_Y').val(top);
+       break;
+      case 2 :
+       image.css({
+         position: 'absolute',
+         top: 0,
+         left: widthBig/2 - widthSmall/2
+       });
+      var top = parseInt(image.css('top'));
+      var left = parseInt(image.css('left'));
+      $('#control_X').val(left);
+      $('#control_Y').val(top);
+       break;
+      case 3 :
+       image.css({
+         position: 'absolute',
+         top: 0,
+         left: widthBig - widthSmall
+       });
+      var top = parseInt(image.css('top'));
+      var left = parseInt(image.css('left'));
+      $('#control_X').val(left);
+      $('#control_Y').val(top);
+       break;
+      case 4 :
+       image.css({
+         position: 'absolute',
+         top: heightBig/2 - heightSmall/2,
+         left: 0
+       });
+      var top = parseInt(image.css('top'));
+      var left = parseInt(image.css('left'));
+      $('#control_X').val(left);
+      $('#control_Y').val(top);
+       break;
+      case 5 :
+       image.css({
+         position: 'absolute',
+         top: heightBig/2 - heightSmall/2,
+         left: widthBig/2 - widthSmall/2
+       });
+      var top = parseInt(image.css('top'));
+      var left = parseInt(image.css('left'));
+      $('#control_X').val(left);
+      $('#control_Y').val(top);
+       break;
+      case 6 :
+       image.css({
+         position: 'absolute',
+         top: heightBig/2 - heightSmall/2,
+         left: widthBig - widthSmall
+       });
+      var top = parseInt(image.css('top'));
+      var left = parseInt(image.css('left'));
+      $('#control_X').val(left);
+      $('#control_Y').val(top);
+       break;
+      case 7 :
+       image.css({
+         position: 'absolute',
+         top: heightBig - heightSmall,
+         left: 0
+       });
+      var top = parseInt(image.css('top'));
+      var left = parseInt(image.css('left'));
+      $('#control_X').val(left);
+      $('#control_Y').val(top);
+       break;
+      case 8 :
+        image.css({
+         position: 'absolute',
+         top: heightBig - heightSmall,
+         left: widthBig/2 - widthSmall/2
+       });
+      var top = parseInt(image.css('top'));
+      var left = parseInt(image.css('left'));
+      $('#control_X').val(left);
+      $('#control_Y').val(top);
+       break;
+      case 9 :
+       image.css({
+         position: 'absolute',
+         top: heightBig - heightSmall,
+         left: widthBig - widthSmall
+       });
+      var top = parseInt(image.css('top'));
+      var left = parseInt(image.css('left'));
+      $('#control_X').val(left);
+      $('#control_Y').val(top);
+       break;
+      default:
+        alert( 'Я таких значений не знаю' );
+    }
   }
 
-  var _block01 = function (e) {
-    e.preventDefault();
-    image.addClass('top01');
-      image.removeClass('content__watermark-block top00 top02 center12 center11 center10 bottom21 bottom20 bottom22');
-      image.css({
-        top: '',
-        left: '',
-        right: '',
-        bottom: ''
-      });
-    var top = parseInt(image.css('top'));
-    var left = parseInt(image.css('left'));
-    $('#control_Y').val(top);
-    $('#control_X').val(left);
-
-  }
-
-  var _block02 = function (e) {
-    e.preventDefault();
-    image.addClass('top02');
-      image.removeClass('content__watermark-block top00 top01 center12 center11 center10 bottom21 bottom20 bottom22');
-      image.css({
-        top: '',
-        left: '',
-        right: '',
-        bottom: ''
-      });
-    var top = parseInt(image.css('top'));
-    var right = parseInt(image.css('left'));
-    $('#control_Y').val(top);
-    $('#control_X').val(right);
-    console.log($('#control_y'));
-  }
-
-  var _block10 = function (e) {
-    e.preventDefault();
-    image.addClass('center10');
-    image.removeClass('content__watermark-block top00 top01 top02 center11 center12 bottom21 bottom20 bottom22');
-      image.css({
-        top: '',
-        left: '',
-        right: '',
-        bottom: ''
-      });
-    var top = parseInt(image.css('top'));
-    var left = parseInt(image.css('left'));
-    $('#control_Y').val(top);
-    $('#control_X').val(left);
-  }
-
-  var _block11 = function (e) {
-    e.preventDefault();
-    image.addClass('center11');
-      image.removeClass('content__watermark-block top02 top01 top00 center12 center10 bottom21 bottom20 bottom22');
-      image.css({
-        top: '',
-        left: '',
-        right: '',
-        bottom: ''
-      });
-    var top = parseInt(image.css('top'));
-    var left = parseInt(image.css('left'));
-    $('#control_Y').val(top);
-    $('#control_X').val(left);
-  }
-
-  var _block12 = function (e) {
-    e.preventDefault();
-    image.addClass('center12');
-      image.removeClass('content__watermark-block top02 top01 top00 center11 center10 bottom21 bottom20 bottom22');
-      image.css({
-        top: '',
-        left: '',
-        right: '',
-        bottom: ''
-      });
-    var top = parseInt(image.css('top'));
-    var right = parseInt(image.css('left'));
-    $('#control_Y').val(top);
-    $('#control_X').val(right);
-  }
-
-  var _block20 = function (e) {
-    e.preventDefault();
-    image.addClass('bottom20');
-      image.removeClass('content__watermark-block top02 top01 center12 center11 center10 bottom21 bottom22');
-      image.css({
-        top: '',
-        left: '',
-        right: '',
-        bottom: ''
-      });
-    var top = parseInt(image.css('top'));
-    var left = parseInt(image.css('left'));
-    $('#control_Y').val(top);
-    $('#control_X').val(left);
-  }
-
-  var _block21 = function (e) {
-    e.preventDefault();
-    image.addClass('bottom21');
-      image.removeClass('content__watermark-block top02 top01 center12 center11 center10 bottom20 bottom22');
-      image.css({
-        top: '',
-        left: '',
-        right: '',
-        bottom: ''
-      });
-    var top = parseInt(image.css('top'));
-    var left = parseInt(image.css('left'));
-    $('#control_Y').val(top);
-    $('#control_X').val(left);
-  }
-
-  var _block22 = function (e) {
-    e.preventDefault();
-    image.addClass('bottom22');
-      image.removeClass('content__watermark-block top02 top01 center12 center11 center10 bottom21 bottom20');
-      image.css({
-        top: '',
-        left: '',
-        right: '',
-        bottom: ''
-      });
-    var top = parseInt(image.css('top'));
-    var right = parseInt(image.css('left'));
-    $('#control_Y').val(top);
-    $('#control_X').val(right);
-  }
-  
   return {
     init: init,
     singleMode: singleMode = false
