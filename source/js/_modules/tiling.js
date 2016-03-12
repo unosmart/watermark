@@ -28,7 +28,8 @@
     if (!tilingModule.tilingMode) {
       var tilingWraps = '<div class="tilingGrid"><div class="bigContainer">',
           wrapper = $('.tilingGrid');
-
+      $valuemode = $('#valuemode');
+      $valuemode.val('tiling-mode');
       tilingModule.tilingMode = true;
 
       contentImgBlock.append(tilingWraps);

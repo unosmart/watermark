@@ -29,21 +29,20 @@ var Social = (function () {
         window.open(url, '', 'toolbar=0,status=0,width=626,height=436');
     }
 
-    function _eventListener() {
+    function attachEvents() {
         $('.socials__link').on('click', function () {
             console.log('работает');
             var social = $(this).data('social'),
                 url = 'http://watermark.unostech.ru/',
                 title = 'Watermarks Generator',
                 text = 'этот наш сайт',
-                img = 'http://watermark.unostech.ru/';
+                img = 'assets/images/demo.jpg';
             if (social)share[social](url, title, img, text)
         });
     }
-
     return {
         init: function () {
-            _eventListener();
+            attachEvents();
         }
     }
 }());

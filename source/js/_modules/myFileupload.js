@@ -150,9 +150,9 @@
 									if ((width < canvasWidth) && (height < canvasHeight)) {//Проверяем нужно ли ресайзить
 											_setResizeWater('', height, width);
 									} else if (width > height) {
-											_setResizeWater('water-horizantal ', Math.round(height / k*0.5), canvasWidth);
+											_setResizeWater('water-horizantal ', Math.round(height / k), canvasWidth);
 									} else if (width < height){
-											_setResizeWater('water-vertical ', canvasHeight, Math.round(width / k*0.5));
+											_setResizeWater('water-vertical ', canvasHeight, Math.round(width / k));
 									}
 							});
 							$(".form__input-img_watermark").attr("placeholder", imgArray.name);
