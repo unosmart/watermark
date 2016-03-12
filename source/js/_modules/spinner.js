@@ -1,32 +1,97 @@
-$(function() {
+;(function() {
+  var singleModeSpinnerModule = {},
+      myDrag = $('#watermark'),
+      watermarkImg = $('#watermarkImg'),
+      spinnerX = null,
+      spinnerY = null;
 
-  var spinnerX = $( "#control_X" ).spinner({
+  publicMethod();
+  init();
+  attachEvents();
+
+  function init() {
+    spinnerX = $( "#control_X" ).spinner({
     min : 0,
     max : 435,
     step : 5
-  });
+    });
 
-  var spinnerY = $( "#control_Y" ).spinner({
+    spinnerY = $( "#control_Y" ).spinner({
     min : 0,
     max : 326,
     step : 5
-  });
-
-  var myDrag = $('#watermark');
-
-  spinnerX.on('spin', function(event, ui) {
-    var currentVal = ui.value;
-
-    myDrag.css ({
-      left: currentVal + 'px'
     });
-  });
+  };
 
-  spinnerY.on('spin', function(event, ui) {
-    var currentVal = ui.value;
+  function attachEvents() {
+    spinnerX.on('spin', moveAxisX);
+    spinnerY.on('spin', moveAxisY);
+  };
 
-    myDrag.css ({
-      top: currentVal + 'px'
+  function moveAxisX(event, ui) {
+    if (singleModule.singleMode) {
+      var currentVal = ui.value;
+      myDrag.css ({
+        left: currentVal + 'px'
+      });
+    }
+  };
+
+  function moveAxisY(event, ui) {
+    if (singleModule.singleMode) {
+      var currentVal = ui.value;
+
+      myDrag.css ({
+        top: currentVal + 'px'
+      });
+    }
+  };
+
+  function moveGutterX(event, ui) {
+    var currentVal = ui.value,
+        waterImgs = watermarkImg.siblings();
+
+   waterImgs.css ({
+      'margin-left': currentVal + 'px'
     });
-  });
-});
+  };
+
+  function moveGutterY(event, ui, selectors) {
+    var currentVal = ui.value,
+    waterImgs = watermarkImg.siblings();
+    
+    waterImgs.css ({
+      'margin-bottom': currentVal + 'px'
+    });
+  };
+
+  function publicMethod() {
+    singleModeSpinnerModule = {
+      tilingModeSpinner: function() {
+        spinnerX.val(tilingModule.gutterLeft);
+        spinnerY.val(tilingModule.gutterBottom);
+
+        spinnerX.on('spin', moveGutterX);
+        spinnerY.on('spin', moveGutterY);
+
+        spinnerX = $( "#control_X" ).spinner({
+          min : 0,
+          max : 100,
+          step : 1
+          });
+
+        spinnerY = $( "#control_Y" ).spinner({
+          min : 0,
+          max : 100,
+          step : 1
+        });
+      },
+      
+      singleModeSpenner: function() {
+        init();
+      }
+    }
+  };
+
+  window.singleModeSpinnerModule = singleModeSpinnerModule;
+})();

@@ -6,15 +6,22 @@ require('SimpleImage.php');
 $data['message'] = 'Успех!';
 $data['status'] = 'ok';
 //Получение данных из формы
-if (empty($_POST["fileurl"])||empty($_POST["watermark"])|| empty($_POST["opacity"]) || empty($_POST["mode"]))	{
+if (empty($_POST["fileurl"])||empty($_POST["watermark"])|| empty($_POST["mode"])){
   exit(json_encode(array('responce'=>'error')));
 }
 $opacity = 100; //значение для прозрачности по умолчанию
 $bgimage_url = $_POST["fileurl"];
 $watermark_url = $_POST["watermark"];
+$setting_mode = $_POST['mode'];
+if ($setting_mode == 'tiling-mode'){
+$margin_X = $_POST['control_X'];
+$margin_Y = $_POST['control_Y'];
+$axisX = '0';
+$axisY = '0';
+}else {
 $axisX = $_POST['control_X'];
 $axisY = $_POST['control_Y'];
-$setting_mode = $_POST['mode'];
+}
 $opacity = $_POST['opacity'] / 100;
 //Тестирование
 //Создаем префикс
@@ -46,32 +53,12 @@ if ($image_height / $watermark_height < 1) {
 }
 if ($setting_mode == 'tiling-mode') {
     //Ограничение по соотношению изображений
-    $max_ratio = 100;
-    $margin_x = 10;
-    $margin_y = 10;
-    $watermark_width += $margin_x;
-    $watermark_height += $margin_y;
+    $marginX = $margin_X;
+    $marginY = $margin_Y;
+    $watermark_width += $marginX;
+    $watermark_height += $marginY;
     $ratio_x = ceil($image_width / $watermark_width);
     $ratio_y = ceil($image_height / $watermark_height);
-    if($ratio_x > $max_ratio || $ratio_y > $max_ratio){
-        http_response_code(500);
-        echo 'Водяной знак слишком маленький';
-        exit;
-    }
-    if ($axisX > $margin_x) {
-        $axisX = $axisX % $watermark_width - $watermark_width;
-        $ratio_x++;
-    } else if ($axisX < 0) {
-        $axisX = $axisX % $watermark_width;
-        $ratio_x++;
-    }
-    if ($axisY > $margin_y) {
-        $axisY = $axisY % $watermark_height - $watermark_height;
-        $ratio_y++;
-    } else if ($axisY < 0) {
-        $axisY = $axisY % $watermark_height;
-        $ratio_y++;
-    }
     for ($i = 0; $i < $ratio_y; $i++) {
         for ($j = 0; $j < $ratio_x; $j++) {
             $x = $axisX + $watermark_width * $j;
