@@ -1,10 +1,11 @@
 var singleModule = (function (){
-    var singleMode = false;
+  var singleMode = false,
+      image = $('#watermark');
 
   var init = function () {
     _setUpListners();
+    singleModule.singleMode = true;
   };
-  var image = $('#watermark');
 
   var _setUpListners = function () {
     $('#single').on('click', _singleMode); // открыть singleMode
@@ -33,6 +34,7 @@ var singleModule = (function (){
 
     tilingModule.tilingMode = false;
     singleMode = false;
+    singleModeSpinnerModule.singleModeSpenner();
     single.addClass('setting-pos__toggle-single_active');
     tilingBtn.removeClass('setting-pos__toggle-tessel_active');
 
