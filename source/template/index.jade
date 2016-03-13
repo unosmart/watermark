@@ -15,6 +15,7 @@ block content
             | ENG
     .links__socials
       ul.socials
+        - var icons = ['fb', 'tw', 'vk']
         each icon in icons 
           li(class="socials__item")
             a(href="#" class="socials__link_" + icon) 

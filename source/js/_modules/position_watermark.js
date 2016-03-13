@@ -25,11 +25,13 @@ var singleModule = (function (){
 
     tilingModule.tilingMode = false;
     singleMode = false;
-    singleModeSpinnerModule.singleModeSpinner();
+    spinnerModule.singleModeSpinner();
     single.addClass('setting-pos__toggle-single_active');
     tilingBtn.removeClass('setting-pos__toggle-tessel_active');
 
-    singleModeSpinnerModule.resetSingleModeSpinner();
+    spinnerModule.resetSingleModeSpinner();
+
+    resetPostionBlock();
 
     if (!singleModule.singleMode) {
       singleModule.singleMode = true;
@@ -166,7 +168,21 @@ var singleModule = (function (){
       default:
         alert( 'Я таких значений не знаю' );
     }
-  }
+  };
+
+  /**
+   * Восстанавливаем блок позиционирования
+   */
+  function resetPostionBlock() {
+    $('.settings-box__row').css({
+      display: 'table-row',
+      // hei: 'value2'
+    });
+    $('.setting-box').removeClass('tilingMode');
+    $('.parallel').remove();
+    $('.vertical').remove();
+  };
+
 
   return {
     init: init,

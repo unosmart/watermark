@@ -1,5 +1,5 @@
 ;(function() {
-  var singleModeSpinnerModule = {},
+  var spinnerModule = {},
       myDrag = $('#watermark'),
       spinnerX = null,
       spinnerY = null;
@@ -55,6 +55,9 @@
       'margin-left': currentVal + 'px'
     });
 
+    $('.vertical').css({'width': currentVal + 'px'});
+    
+
     if ($('#control_X').val() > 9) {
 
       $('#watermark').css({
@@ -76,13 +79,31 @@
     waterImgs.siblings().css ({
       'margin-bottom': currentVal + 'px'
     });
+
+    if ($('#control_Y').val() > 9) {
+      $('#watermark').css({
+        height: 'auto',
+        'max-height': '1100px'
+      });
+    }
+
+    // Visualization of changing margins on Y axis
+    $('.parallel').css({'height': currentVal + 'px'});
+
   };
 
   function publicMethod() {
-    singleModeSpinnerModule = {
+    spinnerModule = {
       tilingModeSpinner: function() {
+        var width = tilingModule.gutterLeft + 'px',
+            height = tilingModule.gutterBottom + 'px';
+
         spinnerX.val(tilingModule.gutterLeft);
         spinnerY.val(tilingModule.gutterBottom);
+
+        // Visualization of changing margins
+        $('.vertical').width(tilingModule.gutterLeft);
+        $('.parallel').height(tilingModule.gutterBottom);
 
         spinnerX.on('spin', moveGutterX);
         spinnerY.on('spin', moveGutterY);
@@ -103,7 +124,9 @@
       singleModeSpinner: function() {
         init();
       },
-
+      /**
+       * Resets the spinners value after changing the mode.
+       */
       resetSingleModeSpinner: function() {
         spinnerX.val(0);
         spinnerY.val(0);
@@ -111,5 +134,5 @@
     }
   };
 
-  window.singleModeSpinnerModule = singleModeSpinnerModule;
+  window.spinnerModule = spinnerModule;
 })();
