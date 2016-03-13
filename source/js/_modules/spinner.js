@@ -54,6 +54,18 @@
     waterImgs.css ({
       'margin-left': currentVal + 'px'
     });
+
+    if ($('#control_X').val() > 9) {
+
+      $('#watermark').css({
+        width: 'auto',
+        'max-width': '1100px'
+      });
+    } else{
+      $('#watermark').css({
+        width: tilingModule.tilingWidth
+      });
+    }
   };
 
   function moveGutterY(event, ui, selectors) {
@@ -79,7 +91,7 @@
           min : 0,
           max : 100,
           step : 1
-          });
+        });
 
         spinnerY = $( "#control_Y" ).spinner({
           min : 0,
@@ -88,8 +100,13 @@
         });
       },
 
-      singleModeSpenner: function() {
+      singleModeSpinner: function() {
         init();
+      },
+
+      resetSingleModeSpinner: function() {
+        spinnerX.val(0);
+        spinnerY.val(0);
       }
     }
   };
