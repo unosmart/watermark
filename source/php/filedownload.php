@@ -6,6 +6,7 @@ require('SimpleImage.php');
 $data['message'] = 'Успех!';
 $data['status'] = 'ok';
 //Получение данных из формы
+// $_POST=array('fileurl'=>'http://water.local/php/files/a1856c576a3fa36605f2ffd8e4d89a7d (1).jpg','watermark'=>'http://water.local/php/files/rustile (2)','mode'=>'single-mode');
 if (empty($_POST["fileurl"])||empty($_POST["watermark"])|| empty($_POST["mode"])){
   exit(json_encode(array('responce'=>'error')));
 }
@@ -73,8 +74,11 @@ if ($setting_mode == 'tiling-mode') {
 $file = $image->overlay($watermark, 'top left', 0.8, $axisX, $axisY)->save($src_result);
 }
 //Запись пути для ответа
+// require('funtion.php');
+// file_force_download($src_result);
 $data['result'] = $dir_answer;
 $data['filename'] = $result_name;
 header('Content-Type: application/json');
-exit(json_encode($data));
+//exit(json_encode(array('responce'=>'error2')));
+exit(json_encode(array('responce'=>'success','filename'=>'php/'.$src_result)));
 ?>

@@ -15,6 +15,14 @@
     /**
      * Initialization of Draggable
      */
+    // var k = 1;
+    // water_width = $('#watermark').width();
+    // img_width = $('#uploaded-img').width();
+    // cont_width = $('.content__main-window').width();  
+    // k= img_width/cont_width;
+    // console.log(img_width);
+    // console.log(cont_width);
+    // console.log(k);
     $("#watermark").draggable({
 
       containment: 'parent',
