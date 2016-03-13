@@ -24,9 +24,11 @@ var singleModule = (function (){
 
     tilingModule.tilingMode = false;
     singleMode = false;
-    singleModeSpinnerModule.singleModeSpenner();
+    singleModeSpinnerModule.singleModeSpinner();
     single.addClass('setting-pos__toggle-single_active');
     tilingBtn.removeClass('setting-pos__toggle-tessel_active');
+
+    singleModeSpinnerModule.resetSingleModeSpinner();
 
     if (!singleModule.singleMode) {
       singleModule.singleMode = true;
