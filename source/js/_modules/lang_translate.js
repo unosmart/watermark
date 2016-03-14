@@ -32,7 +32,7 @@
     });
     $('html').attr('lang', lang);
   };
-  $(document).load(toggleLanguage(localStorage.lang));
+  toggleLanguage(localStorage.lang);
   $languages_link = $('.languages__link');
   function attachEvents(){
       $('.languages__link').on('click', function(e) {
