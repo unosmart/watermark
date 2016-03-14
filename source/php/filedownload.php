@@ -11,14 +11,18 @@ if (empty($_POST["fileurl"])||empty($_POST["watermark"])|| empty($_POST["mode"])
   exit(json_encode(array('responce'=>'error')));
 }
 $opacity = 100; //значение для прозрачности по умолчанию
+$margin_X = 10;//значение отступов по умолчанию
+$margin_Y = 10;//значение отступов по умолчанию
+$axisX = 0;//значение позиции по умолчанию
+$axisY = 0;//значение позиции по умолчанию
 $bgimage_url = $_POST["fileurl"];
 $watermark_url = $_POST["watermark"];
 $setting_mode = $_POST['mode'];
 if ($setting_mode == 'tiling-mode'){
 $margin_X = $_POST['control_X'];
 $margin_Y = $_POST['control_Y'];
-$axisX = '0';
-$axisY = '0';
+$axisX = 0;
+$axisY = 0;
 }else {
 $axisX = $_POST['control_X'];
 $axisY = $_POST['control_Y'];
@@ -71,7 +75,7 @@ if ($setting_mode == 'tiling-mode') {
     $image->save($src_result);
 } else {
 //Сохранение результата
-$file = $image->overlay($watermark, 'top left', 0.8, $axisX, $axisY)->save($src_result);
+$file = $image->overlay($watermark, 'top left',$opacity, $axisX, $axisY)->save($src_result);
 }
 //Запись пути для ответа
 // require('funtion.php');

@@ -12,5 +12,6 @@ module.exports = [
   './source/js/_modules/position_watermark.js',
   './source/js/_modules/download.js',
   './source/js/_modules/tiling.js',
+  './source/js/_modules/reset.js',
   './source/js/_modules/share.js'
 ];

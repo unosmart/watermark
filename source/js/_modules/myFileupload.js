@@ -34,7 +34,9 @@
 							if ($("#watermark").length > 0) {
 									$('#watermarkImg').remove();
 									$(".form__input-img_watermark").attr("placeholder", 'Image.jpg');
-							}
+						}	// 	else {
+						// 		$(".content__img-block").append("<div class='content__watermark-block' id='watermark'></div>");
+						// }
 							var $img = $('<img>', {// создаем элемент изображения
 											src: imgArray.url, // путь до файла
 											alt: imgArray.name,
@@ -110,10 +112,18 @@
 					done: function (e, data) {
 							var imgArray = data.result.files[0];
 							singleModule.resetPos();//сбрасываем положение водяного знака
+							// elems = $('#watermarkImg').siblings(),
+							// bigContainer = $('.bigContainer'),
+							// watermarkBlock = $('#watermark');
 							if ($('#uploaded-img').length > 0) {
 									// удаляем предыдущий водяной знак
 									if ($('#watermark').length > 0) {
 											$('#watermarkImg').remove();
+									// if(tilingModule.tilingMode){
+									// 	elems.remove();
+									// 	bigContainer.unwrap();
+									// 	watermarkBlock.unwrap();
+									// }
 									}
 							}
 							$watermark = $('<img>', {// создаем водяной знак
@@ -157,7 +167,7 @@
 									}
 							});
 							$(".form__input-img_watermark").attr("placeholder", imgArray.name);
-							$("#reset").removeAttr('disabled');
+							$("#form__reset-btn").removeAttr('disabled');
 							$("#submit").removeAttr('disabled');
 							$("#waterInput").attr('value', imgArray.url); //Записываем ссылку на водяной знак, для дальнейшей склейки на сервере.
 							$(".content__watermark-block").append($watermark);// добавляем в поток

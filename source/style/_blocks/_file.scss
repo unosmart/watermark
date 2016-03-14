@@ -86,7 +86,7 @@
     top: 24%;
     left: 0%;
     z-index: 1;
-    transition: all 1s linear;
+    transition: all 0.3s linear;
   }
 .hidden{
     display: none;
@@ -102,5 +102,5 @@
     top: 36%;
     left: 0%;
     z-index: 10;
-    transition: all 1s linear;
+    transition: all 0.3s linear;
 }

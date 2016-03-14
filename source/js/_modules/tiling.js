@@ -34,7 +34,7 @@
 
       contentImgBlock.append(tilingWraps);
       watermarkBlock.appendTo('.bigContainer');
-
+      enableMarginVisualization();
       tileWatermark();
     }
   };
@@ -54,8 +54,8 @@
         l = 0;
 
     tiling.css({
-      left: '0',
-      top: '0'
+      left: '20%',
+      top: '20%'
     });
     element.first().css('display', 'none');
     tiling.width(countWidth * (watermarkWidth + tilingModule.gutterLeft));
@@ -74,18 +74,25 @@
       clone.appendTo(tiling);
     }
    
-    singleModeSpinnerModule.tilingModeSpinner();
+    spinnerModule.tilingModeSpinner();
     dragModule.setContainment();
   };
 
-  // function removeWidth() {
-  //   var watermarkBlock = $('#watermark');
+  /**
+   * Enable margin visuzalization
+   */
+  function enableMarginVisualization() {
+    var rows = $('.settings-box__row'),
+        settingBox = $('.setting-box'),
+        parallel = '<div class="parallel">',
+        vertical = '<div class="vertical">';
 
-  //     watermarkBlock.css({
-  //       width: 'auto',
-  //       'max-width': '1100px'
-  //     });
-  // }
+    rows.css('display', 'none');
+    settingBox.addClass('tilingMode');
+
+    settingBox.append(parallel);
+    settingBox.append(vertical);
+  };
 
   function publicMethod() {
     tilingModule = {
