@@ -40,6 +40,7 @@
 				spinnerY = $("#control_Y");
 
 		$(".form__section_disabledSettings").removeClass('visuallyhidden hidden');
+		$(".form__section_disabledInput").removeClass('visuallyhidden hidden');
 		spinnerModule.resetSpinner();
 		singleModule.resetPos();
 		resetCanvas();

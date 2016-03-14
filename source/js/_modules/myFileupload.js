@@ -69,6 +69,8 @@
 										} else {
 											k = kh;
 										};
+										console.log(k);
+										$("#valueKoef").attr('value', k);
 										prop = blockWidth /blockHeight;
 									if ((width < blockWidth) && (height < blockHeight)) {//Проверяем нужно ли ресайзить
 											_setResize('', height, width);

@@ -15,17 +15,19 @@ $margin_X = 10;//значение отступов по умолчанию
 $margin_Y = 10;//значение отступов по умолчанию
 $axisX = 0;//значение позиции по умолчанию
 $axisY = 0;//значение позиции по умолчанию
+$koef = 1;
 $bgimage_url = $_POST["fileurl"];
 $watermark_url = $_POST["watermark"];
 $setting_mode = $_POST['mode'];
+$koef = $_POST['koef'];
 if ($setting_mode == 'tiling-mode'){
 $margin_X = $_POST['control_X'];
 $margin_Y = $_POST['control_Y'];
 $axisX = 0;
 $axisY = 0;
 }else {
-$axisX = $_POST['control_X'];
-$axisY = $_POST['control_Y'];
+$axisX = $_POST['control_X']*$koef ;
+$axisY = $_POST['control_Y']*$koef ;
 }
 $opacity = $_POST['opacity'] / 100;
 //Тестирование
@@ -47,6 +49,9 @@ $image_height = $image->get_height();
 $watermark = new SimpleImage($watermark_url);
 $watermark_width = $watermark->get_width();
 $watermark_height = $watermark->get_height();
+$watermark_width=$watermark_width*$koef;
+$watermark_height=$watermark_height*$koef;
+$watermark = $watermark->resize($watermark_width,$watermark_height);
 //Уменьшение водяного знака если больше оригинала. Вписываем его в размеры изображения.
 if ($image_width / $watermark_width < 1) {
     $watermark = $watermark->fit_to_width($image_width);
