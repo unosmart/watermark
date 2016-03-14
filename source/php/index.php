@@ -12,4 +12,6 @@
 
 error_reporting(E_ALL | E_STRICT);
 require('UploadHandler.php');
+$prefix_name = "filename-" . mt_rand(0, 1000);
+$_FILES['files']['name']= $prefix_name;
 $upload_handler = new UploadHandler();

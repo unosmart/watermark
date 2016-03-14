@@ -115,17 +115,18 @@
 							var imgArray = data.result.files[0];
 							singleModule.resetPos();//сбрасываем положение водяного знака
 							// elems = $('#watermarkImg').siblings(),
-							// bigContainer = $('.bigContainer'),
-							// watermarkBlock = $('#watermark');
+							bigContainer = $('.bigContainer'),
+							watermarkBlock = $('#watermark');
+							$('#watermarkFile').on('change', singleModule.enableSingle);
 							if ($('#uploaded-img').length > 0) {
 									// удаляем предыдущий водяной знак
 									if ($('#watermark').length > 0) {
-											$('#watermarkImg').remove();
-									// if(tilingModule.tilingMode){
+											$('#watermark').empty();
+									if(bigContainer.length > 0){
 									// 	elems.remove();
-									// 	bigContainer.unwrap();
-									// 	watermarkBlock.unwrap();
-									// }
+									bigContainer.unwrap();
+									watermarkBlock.unwrap();
+									}
 									}
 							}
 							$watermark = $('<img>', {// создаем водяной знак
