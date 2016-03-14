@@ -17,7 +17,11 @@
 	function reset(e) {
 		e.preventDefault();
 
+		var spinnerX = $("#control_X"),
+				spinnerY = $("#control_Y");
+
 		$(".form__section_disabledSettings").removeClass('visuallyhidden hidden');
+		spinnerModule.resetSpinner();
 	}
 
 	function publicMethod() {

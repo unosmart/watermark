@@ -127,7 +127,7 @@
       /**
        * Resets the spinners value after changing the mode.
        */
-      resetSingleModeSpinner: function() {
+      resetSpinner: function() {
         spinnerX.val(0);
         spinnerY.val(0);
       }

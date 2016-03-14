@@ -29,7 +29,7 @@ var singleModule = (function (){
     single.addClass('setting-pos__toggle-single_active');
     tilingBtn.removeClass('setting-pos__toggle-tessel_active');
 
-    spinnerModule.resetSingleModeSpinner();
+    spinnerModule.resetSpinner();
 
     resetPostionBlock();
 
