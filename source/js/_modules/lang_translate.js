@@ -15,15 +15,15 @@
         '.copyright': '© 2016. Это сайт команды №3, пожалуйста, не копируйте и не воруйте  его!'
       },
       en : {
-        '.content__title-text' : 'Generator Watermark',
+        '.content__title-text' : 'Watermark generator',
         '.settings__title': 'Settings',
-        '.form__section__title_img' : 'Original image',
+        '.form__section__title_img' : 'Initial image',
         '.form__section__title_watermark' : 'Watermark',
         '.form__section__title_pos' : 'Position',
         '.form__section__title_opacity' : 'Opacity',
         '.settings-btn_clean' : 'Reset',
         '.settings-btn_download' : 'Download',
-        '.copyright': '© 2016. This site team №3, please do not copy or steal it!'
+        '.copyright': '© 2016. This is a site of team №3, please do not copy or steal it!'
       }
   };
   function toggleLanguage(lang){
