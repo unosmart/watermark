@@ -16,6 +16,17 @@ Watermark Generator
 3. Есть возможность переметстить водяной знак курсором или через элементы позиционирования. Можно замостить водяной знак.
 4. Скачать результат, нажав на кнопку "Скачать"
 
+### Folder structure
+    .
+    ├──\ source                 # Main application folder
+        ├──\ fonts              # Fonts
+        ├──\ images             # Images, sprites for styling
+        ├──\ js                 # core JS elements
+        ├──\ template           # JADE layout
+        ├──\ php                # Backend scripts
+        └── styles              # SCSS styles
+    └── README.md               # This file
+
 Состав команды
 ----------------------
 1. Иванов Максим - Тимлид, работа с git, html, js, code review, php, тестирование
