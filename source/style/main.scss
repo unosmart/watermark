@@ -1,6 +1,8 @@
 /*==================== Vendor внешние стили ==========================*/
 @import "_vendor/normalize";
 @import "_vendor/jquery-ui";
+@import "_vendor/bootstrap.min";
+@import "_vendor/jquery-confirm.min";
 /*========================== Свое, родное ==========================*/
 @import "_mixin/variables";
 @import "_mixin/placeholders";

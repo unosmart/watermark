@@ -3,6 +3,7 @@ $('.form-settings')
     e.preventDefault();
     var _data = $(this).serialize();
     console.log(_data);
+    lang = $('html');
     $.ajax({
       type: 'POST',
       url: './php/filedownload.php',
@@ -11,6 +12,11 @@ $('.form-settings')
       success: function(data) {
         //var data=JSON.parse(data);
         if (data.responce =='error'){
+        if(lang.attr('lang')=='ru'){
+        validation.alertPopup('Внимание','Заполнены не все данные');
+        }else{
+        validation.alertPopup('Attention','Filled not all data');
+        }
         console.log('Не заполнены все данные');
         }else{
         var link = document.createElement('a');
@@ -24,7 +30,13 @@ $('.form-settings')
       },
 
       error:  function(xhr, str){
-        console.log('Ошибка на сервере: ' + xhr.responseCode);
+        $.alert({
+          title: 'Внимание',
+          theme: 'material',
+          content: 'Ошибка на сервере: ' + xhr.responseCode,
+          confirmButton: 'OK',
+          closeIcon: true
+        });
       }
     });
   });

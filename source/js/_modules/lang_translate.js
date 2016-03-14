@@ -25,18 +25,21 @@
         '.settings-btn_download' : 'Download',
         '.copyright': '© 2016. This site team №3, please do not copy or steal it!'
       }
-  },
-  lang = 'ru';
+  };
   function toggleLanguage(lang){
     $.each(language[lang], function(key){
         $(key).text(this);
     });
+    $('html').attr('lang', lang);
   };
+  $(document).load(toggleLanguage(localStorage.lang));
+  $languages_link = $('.languages__link');
   function attachEvents(){
       $('.languages__link').on('click', function(e) {
           e.preventDefault();
           var $this = $(this);
-          lang = $this.attr('lang');
+          localStorage.lang = $this.attr('lang');
+          lang = localStorage.lang;
           if($this.attr('lang')=='ru'){
               $this.addClass('languages__link_active');
               $('.languages__link_en').removeClass('languages__link_active');
@@ -44,7 +47,6 @@
               $this.addClass('languages__link_active');
               $('.languages__link_ru').removeClass('languages__link_active');
           }
-          $('html').attr('lang', lang);
           toggleLanguage(lang);
       })
   };

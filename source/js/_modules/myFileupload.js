@@ -79,9 +79,10 @@
 							$("#watermarkFile").removeAttr('disabled');
 							$("#imgInput").attr('value', imgArray.url); //Записываем ссылку на оригинал, для дальнейшей склейки на сервере.
 							$(".content__img-block").prepend($img);// Вставляем в поток
+							hiddenWater= $("#uploaded-img");
 							// анимация на блокировку input
 							var disabliedInput = $(".form__section_disabledInput");
-								if(disabliedInput.hasClass('hidden')) {
+								if(hiddenWater.src=="") {
 									disabliedInput.removeClass('hidden');
 									setTimeout(function () {
 										disabliedInput.removeClass('visuallyhidden');
@@ -161,8 +162,9 @@
 							$("#waterInput").attr('value', imgArray.url); //Записываем ссылку на водяной знак, для дальнейшей склейки на сервере.
 							$(".content__watermark-block").append($watermark);// добавляем в поток
 							// анимация на блокировку position
+							hiddenControle= $("#watermarkImg");
 							var disabliedPosition = $(".form__section_disabledSettings");
-								if(disabliedPosition.hasClass('hidden')) {
+								if(hiddenControle.src=="") {
 									disabliedPosition.removeClass('hidden');
 									setTimeout(function () {
 										disabliedPosition.removeClass('visuallyhidden');

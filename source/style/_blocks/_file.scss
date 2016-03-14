@@ -79,11 +79,11 @@
     padding: 0;
   }
 .form__section_disabledInput{
-    position: absolute;  display: none;
+    position: absolute;
     background-color: rgba(241, 241, 245, 0.64);
     width: 258px;
     height: 85px;
-    top: 21%;
+    top: 24%;
     left: 0%;
     z-index: 1;
     transition: all 1s linear;
@@ -95,12 +95,11 @@
   opacity: 0;
 }
 .form__section_disabledSettings{
-  display: none;
     position: absolute;
     background-color: rgba(241, 241, 245, 0.64);
     width: 258px;
     height: 64%;
-    top: 33%;
+    top: 36%;
     left: 0%;
     z-index: 10;
     transition: all 1s linear;
